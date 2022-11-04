@@ -1,0 +1,6 @@
+---
+import HTML from '../layouts/HTML.astro';
+import strings, { decrypt } from '../strings.js';
+---
+
+<HTML title={decrypt(strings.NAME)}>Hello, world!</HTML>
