@@ -6,10 +6,12 @@ const textHeading = decrypt(strings.HEADER_TEXT_HEADING);
 const text = strings.HEADER_TEXT.map(decrypt);
 ---
 
-<header class="vh-100 p-5 text-lowercase">
-  <div class="container h-100 flex-maximize">
+<header class="min-vh-100 p-5 flex-maximize text-lowercase">
+  <div class="container flex-maximize">
     <!-- <img class="rounded" src="/portrait.jpg" alt="" /> -->
-    <div class="rounded bg-primary" id="portrait"></div>
+    <div class="rounded bg-primary text-light flex-center" id="portrait">
+      placeholder
+    </div>
 
     <article class="d-flex flex-column-reverse gap-4">
       <h1 class="font-heading text-primary fw-light px-4">
@@ -18,7 +20,7 @@ const text = strings.HEADER_TEXT.map(decrypt);
       </h1>
 
       <section class="rounded-end bg-light border-primary p-4 pb-2">
-        <h2 class="font-heading text-primary">{textHeading}</h2>
+        <h2 class="font-heading text-primary fw-bold">{textHeading}</h2>
         <p>
           {text[0]}
           <strong>{text[1]}</strong>

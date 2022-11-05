@@ -13,7 +13,7 @@ function decrypt(str) {
 const strings = {
   NAME: 'TWFyayUyMFBvc28=',
   HEADER_MAIN: ['SGkhJTIwSSVFMiU4MCU5OW0=', 'TWFyay4='],
-  HEADER_TEXT_HEADING: 'V2hvJTIwYW0lMjBJJTNG',
+  HEADER_TEXT_HEADING: 'V2hvJTIwYW0lMjBJ',
   HEADER_TEXT: [
     'SSVFMiU4MCU5OW0lMjBh',
     'd2ViJTIwYW5kJTIwc29mdHdhcmUlMjBkZXZlbG9wZXI=',
@@ -29,6 +29,7 @@ const strings = {
     'Zm9yJTIwYm90aCUyMG1vYmlsZSUyMGFuZCUyMHRoZSUyMHdlYi4=',
     'UFMlM0ElMjBJJTIwZGFiYmxlJTIwaW4lMjBkYXRhJTIwc2NpZW5jZSUyMHRvbyE=',
   ],
+  PROJECTS_HEADING: 'V2hhdCUyMEklMjBEbw==',
 };
 
 export default strings;

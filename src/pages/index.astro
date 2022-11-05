@@ -1,25 +1,13 @@
 ---
 import HTML from '../layouts/HTML.astro';
 import Header from '../components/Header.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import Main from '../components/Main.astro';
 import strings, { decrypt } from '../strings.js';
 ---
 
 <HTML title={decrypt(strings.NAME)}>
   <Header />
-  <main class="view">
-    <article id="projects">
-      <h2>What I do</h2>
-      <div id="project-list">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-      </div>
-    </article>
-  </main>
+  <Main />
 
   <footer class="text-light view">
     <h2>contact</h2>
@@ -35,18 +23,6 @@ import strings, { decrypt } from '../strings.js';
   .view {
     min-height: 100vh;
     background-image: url('/bg.png');
-  }
-
-  main.view #projects {
-    height: 100%;
-  }
-  main.view #project-list {
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 0 3rem;
   }
 
   footer.view {

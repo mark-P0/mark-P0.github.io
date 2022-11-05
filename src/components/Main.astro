@@ -1,0 +1,35 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import strings, { decrypt } from '../strings.js';
+---
+
+<main class="min-vh-100 p-5 flex-maximize text-lowercase">
+  <div class="container h-100">
+    <article class="h-100">
+      <h2 class="font-heading text-primary fw-bold">
+        {decrypt(strings.PROJECTS_HEADING)}
+      </h2>
+
+      <div class="d-grid gap-4" id="projects">
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+      </div>
+    </article>
+  </div>
+</main>
+
+<style>
+  main {
+    background-image: url('/bg.png');
+  }
+
+  #projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+</style>
