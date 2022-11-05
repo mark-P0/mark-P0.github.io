@@ -1,4 +1,8 @@
 ---
+import '../styles/utilities.css';
+import '../styles/fonts.css';
+import '../styles/scrollbars.css';
+
 export interface Props {
   title: string;
 }
@@ -29,39 +33,10 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-  /* Overrides */
+  /* Bootstrap Overrides */
   :root {
     --bs-primary-rgb: 20, 35, 55;
-    --bs-body-font-family: PTSans;
     --bs-body-color: rgb(50 50 50);
-  }
-
-  /* Font Definitions */
-  @font-face {
-    font-family: Nunito;
-    src: url('/Nunito-VariableFont_wght.ttf');
-  }
-  @font-face {
-    font-family: PTSans;
-    src: url('/PTSans-Regular.ttf');
-  }
-  .font-heading {
-    font-family: Nunito;
-  }
-  .font-regular {
-    font-family: PTSans;
-  }
-
-  /* Utilities */
-  .flex-maximize {
-    display: flex;
-  }
-  .flex-maximize > * {
-    flex: 1;
-  }
-  .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    --bs-body-font-family: PTSans;
   }
 </style>
