@@ -1,16 +1,12 @@
 ---
 import HTML from '../layouts/HTML.astro';
+import Header from '../components/Header.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import strings, { decrypt } from '../strings.js';
 ---
 
 <HTML title={decrypt(strings.NAME)}>
-  <header class="view">
-    <div id="image">image</div>
-    <div id="whoami">whoami</div>
-    <div id="name">name</div>
-  </header>
-
+  <Header />
   <main class="view">
     <article id="projects">
       <h2>What I do</h2>
@@ -39,25 +35,6 @@ import strings, { decrypt } from '../strings.js';
   .view {
     min-height: 100vh;
     background-image: url('/bg.png');
-  }
-
-  header.view {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr min-content;
-    grid-template-areas:
-      'image whoami'
-      'image name';
-    /* display: none; */
-  }
-  header.view #image {
-    grid-area: image;
-  }
-  header.view #whoami {
-    grid-area: whoami;
-  }
-  header.view #name {
-    grid-area: name;
   }
 
   main.view #projects {

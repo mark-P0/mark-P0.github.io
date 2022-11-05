@@ -1,0 +1,72 @@
+---
+import strings, { decrypt } from '../strings.js';
+
+const main = strings.HEADER_MAIN.map(decrypt);
+const textHeading = decrypt(strings.HEADER_TEXT_HEADING);
+const text = strings.HEADER_TEXT.map(decrypt);
+---
+
+<header class="vh-100 p-5 text-lowercase">
+  <div class="container h-100 flex-maximize">
+    <!-- <img class="rounded" src="/portrait.jpg" alt="" /> -->
+    <div class="rounded bg-primary" id="portrait"></div>
+
+    <article class="d-flex flex-column-reverse gap-4">
+      <h1 class="font-heading text-primary fw-light px-4">
+        {main[0]}
+        <span class="fw-bold">{main[1]}</span>
+      </h1>
+
+      <section class="rounded-end bg-light border-primary p-4 pb-2">
+        <h2 class="font-heading text-primary">{textHeading}</h2>
+        <p>
+          {text[0]}
+          <strong>{text[1]}</strong>
+          <span class="text-capitalize">{text[2]}</span>
+          {text[3]}
+          <em>{text[4]}</em>
+          <br />
+          {text[5]}
+          <strong>{text[6]}</strong>
+          {text[7]}
+          <strong>{text[8]}</strong>
+          {text[9]}
+          <strong>{text[10]}</strong>
+          {text[11]}
+          <br />
+          <span class="opacity-25">{text[12]}</span>
+        </p>
+      </section>
+    </article>
+  </div>
+</header>
+
+<style>
+  header {
+    background-image: url('/bg.png');
+  }
+
+  /* img { */
+  /* flex: unset !important; */
+  /* } */
+  #portrait {
+    flex: unset !important;
+    aspect-ratio: 3 / 4;
+  }
+
+  h1 {
+    /* Bootstrap's responsive font size syntax with the base overridden */
+    font-size: calc(5rem + 1.5vw);
+
+    margin: 0;
+    padding: 0;
+  }
+
+  section {
+    /* Bootstrap's `border-2` class */
+    border: 2px solid;
+
+    border-top: none;
+    border-left: none;
+  }
+</style>
