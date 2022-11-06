@@ -1,2 +1,5 @@
 astro
+astrojs
 tsconfigs
+firebaseapp
+appspot

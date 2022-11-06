@@ -1,5 +1,5 @@
 ---
-import ProjectCard from './ProjectCard.astro';
+import ProjectList from './ProjectList.svelte';
 import strings, { decrypt } from '../strings.js';
 ---
 
@@ -10,14 +10,7 @@ import strings, { decrypt } from '../strings.js';
         {decrypt(strings.PROJECTS_HEADING)}
       </h2>
 
-      <div class="d-grid gap-4" id="projects">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-      </div>
+      <ProjectList client:idle />
     </article>
   </div>
 </main>
@@ -25,11 +18,5 @@ import strings, { decrypt } from '../strings.js';
 <style>
   main {
     background-image: url('/bg.png');
-  }
-
-  #projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
   }
 </style>
