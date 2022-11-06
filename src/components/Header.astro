@@ -20,7 +20,9 @@ const text = strings.HEADER_TEXT.map(decrypt);
         <span class="fw-bold">{main[1]}</span>
       </h1>
 
-      <section class="rounded-end bg-light border-primary p-4 pb-2">
+      <section
+        class="rounded-end bg-light border-primary border-stylized p-4 pb-2"
+      >
         <h2 class="font-heading text-primary fw-bold">
           <a href={textHeadingLink} target="_blank" rel="noopener noreferrer">
             {textHeading}
@@ -67,14 +69,6 @@ const text = strings.HEADER_TEXT.map(decrypt);
 
     margin: 0;
     padding: 0;
-  }
-
-  section {
-    /* Bootstrap's `border-2` class */
-    border: 2px solid;
-
-    border-top: none;
-    border-left: none;
   }
 
   h2 a,
