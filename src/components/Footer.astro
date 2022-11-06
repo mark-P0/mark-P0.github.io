@@ -17,17 +17,14 @@ import strings, { decrypt } from '../strings.js';
         <span class="bi bi-telephone-fill ms-2"></span>
       </p>
       <div class="fs-1 hstack justify-content-end gap-4">
-        <a class="bi bi-github link-light" href={decrypt(strings.FOOTER_VCS)}>
+        <a class="bi bi-github" href={decrypt(strings.FOOTER_VCS)}>
+          <span class="visually-hidden">External link</span>
         </a>
-        <a
-          class="bi bi-linkedin link-light"
-          href={decrypt(strings.FOOTER_SOCIAL)}
-        >
+        <a class="bi bi-linkedin" href={decrypt(strings.FOOTER_SOCIAL)}>
+          <span class="visually-hidden">External link</span>
         </a>
-        <a
-          class="bi bi-envelope-fill link-light"
-          href={decrypt(strings.FOOTER_ADDRESS)}
-        >
+        <a class="bi bi-envelope-fill" href={decrypt(strings.FOOTER_ADDRESS)}>
+          <span class="visually-hidden">External link</span>
         </a>
       </div>
     </section>
