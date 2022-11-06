@@ -55,12 +55,4 @@ async function getTopLevelData(root) {
   return snapshot.val();
 }
 
-async function getProjects(root = 'projects') {
-  const snapshot = await get(child(ref(db), root));
-
-  if (!snapshot.exists()) throw 'Error getting projects';
-
-  return snapshot.val();
-}
-
-export { app, db, getProjects, getTopLevelData };
+export { app, db, getTopLevelData };

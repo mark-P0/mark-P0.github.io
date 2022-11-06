@@ -1,16 +1,23 @@
 <script lang="ts">
+  import { fade } from 'svelte/transition';
+
   let name = 'Project name';
   let description =
     'Short description of the project. Just a couple of sentences will do.';
   let screenshot = '/favicon.png';
   let sourceCode = '/';
   let livePreview: string;
-  export { name, description, screenshot, sourceCode, livePreview };
+  let index: number;
+  export { name, description, screenshot, sourceCode, livePreview, index };
 
+  const transitionParameters = {
+    delay: 250 * index,
+    duration: 750,
+  };
   const alt = 'A screenshot of the project.';
 </script>
 
-<section class="card">
+<section transition:fade={transitionParameters} class="card">
   <div
     class="position-relative overflow-hidden card-img-top bg-primary text-light flex-center"
   >
