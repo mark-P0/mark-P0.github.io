@@ -49,6 +49,12 @@ async function addNewProject(projectData) {
   return result;
 }
 
+async function getTopLevelData(root) {
+  const snapshot = await get(child(ref(db), root));
+  if (!snapshot.exists()) throw `Error getting requested data at ${root}`;
+  return snapshot.val();
+}
+
 async function getProjects(root = 'projects') {
   const snapshot = await get(child(ref(db), root));
 
@@ -57,4 +63,4 @@ async function getProjects(root = 'projects') {
   return snapshot.val();
 }
 
-export { app, db, getProjects };
+export { app, db, getProjects, getTopLevelData };

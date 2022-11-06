@@ -1,4 +1,5 @@
 ---
+import Portrait from './Portrait.svelte';
 import strings, { decrypt } from '../strings.js';
 
 const main = strings.HEADER_MAIN.map(decrypt);
@@ -7,12 +8,9 @@ const textHeading = decrypt(strings.HEADER_TEXT_HEADING);
 const text = strings.HEADER_TEXT.map(decrypt);
 ---
 
-<header class="min-vh-100 p-5 flex-maximize text-lowercase">
+<header class="vh-100 p-5 flex-maximize text-lowercase">
   <div class="container flex-maximize">
-    <!-- <img class="rounded" src="/portrait.jpg" alt="" /> -->
-    <div class="rounded bg-primary text-light flex-center" id="portrait">
-      placeholder
-    </div>
+    <Portrait client:idle />
 
     <article class="d-flex flex-column-reverse gap-4">
       <h1 class="font-heading text-primary fw-light px-4">
@@ -55,26 +53,11 @@ const text = strings.HEADER_TEXT.map(decrypt);
     background-image: url('/bg.png');
   }
 
-  /* img { */
-  /* flex: unset !important; */
-  /* } */
-  #portrait {
-    flex: unset !important;
-    aspect-ratio: 3 / 4;
-  }
-
   h1 {
     /* Bootstrap's responsive font size syntax with the base overridden */
     font-size: calc(5rem + 1.5vw);
 
     margin: 0;
     padding: 0;
-  }
-
-  h2 a,
-  h2 a:hover,
-  _ {
-    color: inherit;
-    text-decoration: inherit;
   }
 </style>
