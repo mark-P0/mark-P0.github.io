@@ -1,10 +1,10 @@
 <script lang="ts">
-  let name: string = 'Project name';
-  let description: string =
+  let name = 'Project name';
+  let description =
     'Short description of the project. Just a couple of sentences will do.';
-  let screenshot: string = '/favicon.png';
-  let livePreview: string = '/';
-  let sourceCode: string = '/';
+  let screenshot = '/favicon.png';
+  let livePreview = '/';
+  let sourceCode = '/';
   export { name, description, screenshot, livePreview, sourceCode };
 
   const alt = 'A screenshot of the project.';
