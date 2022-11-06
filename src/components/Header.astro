@@ -1,5 +1,6 @@
 ---
 import Portrait from './Portrait.svelte';
+import ResumeButton from './ResumeButton.svelte';
 import strings, { decrypt } from '../strings.js';
 
 const main = strings.HEADER_MAIN.map(decrypt);
@@ -18,31 +19,42 @@ const text = strings.HEADER_TEXT.map(decrypt);
         <span class="fw-bold">{main[1]}</span>
       </h1>
 
-      <section
-        class="rounded-end bg-light border-primary border-stylized p-4 pb-2"
-      >
-        <h2 class="font-heading text-primary fw-bold">
-          <a href={textHeadingLink} target="_blank" rel="noopener noreferrer">
-            {textHeading}
+      <section class="card border-primary border-stylized p-4 pb-2 pe-1">
+        <div class="card-body p-0">
+          <h2 class="font-heading text-primary fw-bold">
+            <a href={textHeadingLink} target="_blank" rel="noopener noreferrer">
+              {textHeading}
+            </a>
+          </h2>
+
+          <p>
+            {text[0]}
+            <strong>{text[1]}</strong>
+            <span class="text-capitalize">{text[2]}</span>
+            {text[3]}
+            <em>{text[4]}</em>
+            <br />
+            {text[5]}
+            <strong>{text[6]}</strong>
+            {text[7]}
+            <strong>{text[8]}</strong>
+            {text[9]}
+            <strong>{text[10]}</strong>
+            {text[11]}
+            <br />
+            <span class="opacity-25">{text[12]}</span>
+          </p>
+        </div>
+
+        <div class="card-footer hstack justify-content-end gap-3 fs-3">
+          <a class="bi bi-github" href={decrypt(strings.LINK_VCS)}>
+            <span class="visually-hidden">External link</span>
           </a>
-        </h2>
-        <p>
-          {text[0]}
-          <strong>{text[1]}</strong>
-          <span class="text-capitalize">{text[2]}</span>
-          {text[3]}
-          <em>{text[4]}</em>
-          <br />
-          {text[5]}
-          <strong>{text[6]}</strong>
-          {text[7]}
-          <strong>{text[8]}</strong>
-          {text[9]}
-          <strong>{text[10]}</strong>
-          {text[11]}
-          <br />
-          <span class="opacity-25">{text[12]}</span>
-        </p>
+          <a class="bi bi-linkedin" href={decrypt(strings.LINK_SOCIAL)}>
+            <span class="visually-hidden">External link</span>
+          </a>
+          <ResumeButton client:load />
+        </div>
       </section>
     </article>
   </div>
@@ -59,5 +71,15 @@ const text = strings.HEADER_TEXT.map(decrypt);
 
     margin: 0;
     padding: 0;
+  }
+
+  .card {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .card-footer {
+    border: none;
+    background-color: unset;
   }
 </style>

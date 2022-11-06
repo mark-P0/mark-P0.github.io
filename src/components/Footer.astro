@@ -3,13 +3,13 @@ import strings, { decrypt } from '../strings.js';
 ---
 
 <footer
-  class="min-vh-100 p-5 flex-maximize text-lowercase text-light text-end fs-4"
+  class="min-vh-100 p-5 flex-maximize text-lowercase text-white text-end fs-4"
 >
   <div class="container d-flex justify-content-end align-items-center">
     <section>
       <h2 class="font-heading fw-bold">{decrypt(strings.FOOTER_HEADING)}</h2>
       <p>{decrypt(strings.FOOTER_TEXT)}</p>
-      <p>
+      <p class="font-heading fw-light">
         {decrypt(strings.FOOTER_LOCATION)}
         <span class="bi bi-geo-alt-fill ms-2"></span>
         <br />
@@ -17,13 +17,13 @@ import strings, { decrypt } from '../strings.js';
         <span class="bi bi-telephone-fill ms-2"></span>
       </p>
       <div class="fs-1 hstack justify-content-end gap-4">
-        <a class="bi bi-github" href={decrypt(strings.FOOTER_VCS)}>
+        <a class="bi bi-github" href={decrypt(strings.LINK_VCS)}>
           <span class="visually-hidden">External link</span>
         </a>
-        <a class="bi bi-linkedin" href={decrypt(strings.FOOTER_SOCIAL)}>
+        <a class="bi bi-linkedin" href={decrypt(strings.LINK_SOCIAL)}>
           <span class="visually-hidden">External link</span>
         </a>
-        <a class="bi bi-envelope-fill" href={decrypt(strings.FOOTER_ADDRESS)}>
+        <a class="bi bi-envelope-fill" href={decrypt(strings.LINK_ADDRESS)}>
           <span class="visually-hidden">External link</span>
         </a>
       </div>
