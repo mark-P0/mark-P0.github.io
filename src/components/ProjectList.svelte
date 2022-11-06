@@ -5,6 +5,8 @@
   let ProjectList: HTMLElement;
   let Spinner: HTMLElement;
 
+  const MAX_PROJECT_CT = 6;
+
   onMount(async () => {
     /*  I don't know why a regular top `import` does not work,
      *  but an `import()` call does...
@@ -14,13 +16,13 @@
 
     Spinner.remove();
     ProjectList.replaceChildren();
-    for (const project of Object.values(projects).slice(0, 6)) {
+    for (const project of Object.values(projects).slice(0, MAX_PROJECT_CT)) {
       new ProjectCard({ target: ProjectList, props: project as any });
     }
   });
 </script>
 
-<div bind:this={ProjectList} class="position-relative h-100 d-grid gap-4">
+<div bind:this={ProjectList} class="position-relative flex-grow-1 d-grid gap-4">
   <div
     bind:this={Spinner}
     class="position-absolute top-50 start-50 translate-middle spinner-grow text-primary"
@@ -36,7 +38,8 @@
   .d-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
   }
 
   .spinner-grow {

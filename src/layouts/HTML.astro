@@ -35,8 +35,26 @@ const { title } = Astro.props;
 <style is:global>
   /* Bootstrap Overrides */
   :root {
-    --bs-primary-rgb: 20, 35, 55;
+    --bs-primary-rgb: 25, 35, 55;
+    --bs-link-color: rgb(var(--bs-primary-rgb));
     --bs-body-color: rgb(50 50 50);
     --bs-body-font-family: PTSans;
+  }
+
+  .border-stylized {
+    /*  Bootstrap's `border-2` (2px) class
+     *  2/16 = 0.125
+     *  1rem = 16px (usually)
+     */
+    border: 0.125rem solid;
+
+    border-top: none;
+    border-left: none;
+  }
+
+  a,
+  a:hover {
+    color: inherit;
+    text-decoration: inherit;
   }
 </style>

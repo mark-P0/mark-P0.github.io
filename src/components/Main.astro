@@ -4,12 +4,11 @@ import strings, { decrypt } from '../strings.js';
 ---
 
 <main class="min-vh-100 p-5 flex-maximize text-lowercase">
-  <div class="container">
-    <article class="h-100">
+  <div class="container flex-maximize">
+    <article class="vstack">
       <h2 class="font-heading text-primary fw-bold">
         {decrypt(strings.PROJECTS_HEADING)}
       </h2>
-
       <ProjectList client:idle />
     </article>
   </div>
