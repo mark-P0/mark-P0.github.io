@@ -9,5 +9,5 @@ export default defineConfig({
    *  As per the official docs
    *  https://docs.astro.build/en/guides/deploy/github/
    */
-  site: 'mark-p0.github.io',
+  site: 'https://mark-p0.github.io',
 });
