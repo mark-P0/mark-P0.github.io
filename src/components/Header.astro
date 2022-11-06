@@ -2,6 +2,7 @@
 import strings, { decrypt } from '../strings.js';
 
 const main = strings.HEADER_MAIN.map(decrypt);
+const textHeadingLink = decrypt(strings.HEADER_TEXT_HEADING_LINK);
 const textHeading = decrypt(strings.HEADER_TEXT_HEADING);
 const text = strings.HEADER_TEXT.map(decrypt);
 ---
@@ -20,7 +21,11 @@ const text = strings.HEADER_TEXT.map(decrypt);
       </h1>
 
       <section class="rounded-end bg-light border-primary p-4 pb-2">
-        <h2 class="font-heading text-primary fw-bold">{textHeading}</h2>
+        <h2 class="font-heading text-primary fw-bold">
+          <a href={textHeadingLink} target="_blank" rel="noopener noreferrer">
+            {textHeading}
+          </a>
+        </h2>
         <p>
           {text[0]}
           <strong>{text[1]}</strong>
@@ -70,5 +75,12 @@ const text = strings.HEADER_TEXT.map(decrypt);
 
     border-top: none;
     border-left: none;
+  }
+
+  h2 a,
+  h2 a:hover,
+  _ {
+    color: inherit;
+    text-decoration: inherit;
   }
 </style>
