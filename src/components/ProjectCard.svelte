@@ -6,8 +6,8 @@
     'Short description of the project. Just a couple of sentences will do.';
   let screenshot = '/favicon.png';
   let sourceCode = '/';
-  let livePreview: string;
-  let index: number;
+  let livePreview: string | undefined = undefined;
+  let index = 0;
   export { name, description, screenshot, sourceCode, livePreview, index };
 
   const transitionParameters = {
@@ -21,12 +21,12 @@
   <div
     class="position-relative overflow-hidden card-img-top bg-primary text-light flex-center"
   >
-    <img class="position-absolute top-0 w-100 " src={screenshot} {alt} />
-    <div class="position-absolute h-100 w-100 " id="overlay" />
+    <img class="position-absolute top-0 w-100" src={screenshot} {alt} />
+    <div class="position-absolute h-100 w-100 overlay" />
   </div>
 
   <div class="card-body text-lowercase border-primary border-stylized">
-    <h4 class="card-title font-heading text-primary fw-bold ">{name}</h4>
+    <h4 class="card-title font-heading text-primary fw-bold">{name}</h4>
     <p class="card-text">{description}</p>
   </div>
 
@@ -49,7 +49,7 @@
     aspect-ratio: 18 / 9;
   }
 
-  #overlay {
+  .overlay {
     --overlay-color-rgb: var(--bs-primary-rgb);
     --overlay-opacity: calc(100% / 3);
     background-color: rgba(var(--overlay-color-rgb), var(--overlay-opacity));

@@ -30,8 +30,28 @@
 <style>
   .d-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-auto-rows: 1fr;
+
+    grid-template-columns: repeat(var(--col-ct), 1fr);
+  }
+
+  /* Phones */
+  @media only screen and (min-width: 0px) {
+    .d-grid {
+      --col-ct: 1;
+    }
+  }
+  /* Tablets */
+  @media only screen and (min-width: 576px) {
+    .d-grid {
+      --col-ct: 2;
+    }
+  }
+  /* Desktops */
+  @media only screen and (min-width: 992px) {
+    .d-grid {
+      --col-ct: 3;
+    }
   }
 </style>
