@@ -12,12 +12,12 @@
 
   const transitionParameters = {
     delay: 250 * index,
-    duration: 750,
+    duration: 500,
   };
   const alt = 'A screenshot of the project.';
 </script>
 
-<section transition:fade={transitionParameters} class="card">
+<section transition:fade={transitionParameters} class="card shadow">
   <div
     class="position-relative overflow-hidden card-img-top bg-primary text-light flex-center"
   >
