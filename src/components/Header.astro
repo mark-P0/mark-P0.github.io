@@ -1,62 +1,16 @@
 ---
-import Portrait from './Portrait.svelte';
-import ResumeButton from './ResumeButton.svelte';
-import strings, { decrypt } from '../strings.js';
-
-const main = strings.HEADER_MAIN.map(decrypt);
-const textHeadingLink = decrypt(strings.HEADER_TEXT_HEADING_LINK);
-const textHeading = decrypt(strings.HEADER_TEXT_HEADING);
-const text = strings.HEADER_TEXT.map(decrypt);
+import HeaderPortrait from './HeaderPortrait.svelte';
+import HeaderHeading from './HeaderHeading.astro';
+import HeaderText from './HeaderText.astro';
 ---
 
-<header class="vh-100 p-3 py-5 flex-maximize text-lowercase bg-white">
-  <div class="container flex-maximize">
-    <Portrait client:visible />
-
-    <article class="d-flex flex-column-reverse gap-4">
-      <h1 class="font-heading text-primary fw-light px-4">
-        {main[0]}
-        <span class="fw-bold">{main[1]}</span>
-      </h1>
-
-      <section class="card border-primary border-stylized p-4 pb-2 pe-1">
-        <div class="card-body p-0">
-          <h2 class="font-heading text-primary fw-bold">
-            <a href={textHeadingLink} target="_blank" rel="noopener noreferrer">
-              {textHeading}
-            </a>
-          </h2>
-
-          <p>
-            {text[0]}
-            <strong>{text[1]}</strong>
-            <span class="text-capitalize">{text[2]}</span>
-            {text[3]}
-            <em>{text[4]}</em>
-            <br />
-            {text[5]}
-            <strong>{text[6]}</strong>
-            {text[7]}
-            <strong>{text[8]}</strong>
-            {text[9]}
-            <strong>{text[10]}</strong>
-            {text[11]}
-            <br />
-            <span class="opacity-25">{text[12]}</span>
-          </p>
-        </div>
-
-        <div class="card-footer hstack justify-content-end gap-3 fs-3">
-          <a class="bi bi-github" href={decrypt(strings.LINK_VCS)}>
-            <span class="visually-hidden">External link</span>
-          </a>
-          <a class="bi bi-linkedin" href={decrypt(strings.LINK_SOCIAL)}>
-            <span class="visually-hidden">External link</span>
-          </a>
-          <ResumeButton client:load />
-        </div>
-      </section>
-    </article>
+<header
+  class="min-vh-100 px-3 py-5 flex-maximize align-items-center text-lowercase bg-white"
+>
+  <div class="container d-grid">
+    <HeaderPortrait client:visible />
+    <HeaderHeading />
+    <HeaderText />
   </div>
 </header>
 
@@ -65,21 +19,34 @@ const text = strings.HEADER_TEXT.map(decrypt);
     background-image: url('/bg.png');
   }
 
-  h1 {
-    /* Bootstrap's responsive font size syntax with the base overridden */
-    font-size: calc(5rem + 1.5vw);
-
-    margin: 0;
-    padding: 0;
+  .d-grid {
+    display: grid;
   }
-
-  .card {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
+  @media only screen and (min-width: 0px) {
+    .d-grid {
+      grid-template-areas:
+        'heading'
+        'portrait'
+        'text';
+    }
   }
-
-  .card-footer {
-    border: none;
-    background-color: unset;
+  @media only screen and (min-width: 576px) {
+    .d-grid {
+      grid-template-areas:
+        'heading  .        .        .   '
+        'portrait portrait portrait text'
+        'portrait portrait portrait text'
+        'portrait portrait portrait text'
+        'portrait portrait portrait .   ';
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .d-grid {
+      grid-template-areas:
+        'portrait portrait portrait .      '
+        'portrait portrait portrait .      '
+        'portrait portrait portrait text   '
+        'portrait portrait portrait heading';
+    }
   }
 </style>

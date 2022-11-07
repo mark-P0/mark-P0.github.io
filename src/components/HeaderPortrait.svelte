@@ -5,7 +5,7 @@
 
   let src: string;
   const transitionParameters = {
-    duration: 750,
+    duration: 500,
   };
 
   onMount(async () => {
@@ -16,7 +16,7 @@
   });
 </script>
 
-<div class="position-relative portrait">
+<div class="position-relative header-portrait">
   <div
     class="position-absolute w-100 h-100 opacity-50 rounded bg-primary text-light flex-center"
   />
@@ -25,7 +25,7 @@
       transition:fade={transitionParameters}
       class="position-absolute rounded img-fluid"
       {src}
-      alt=""
+      alt="A person"
     />
   {:else}
     <LoadingIndicator />
@@ -33,9 +33,16 @@
 </div>
 
 <style>
-  .portrait {
+  .header-portrait {
     flex-grow: 0;
     flex-shrink: 0;
     aspect-ratio: 3 / 4;
+
+    grid-area: portrait;
+  }
+  @media only screen and (min-width: 992px) {
+    .header-portrait {
+      align-self: end;
+    }
   }
 </style>
