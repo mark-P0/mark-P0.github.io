@@ -10,8 +10,11 @@ function decrypt(str) {
   return decodeURIComponent(atob(str));
 }
 
-// const _ = encrypt('...');
-// console.log([_, decrypt(_)]);
+// /* prettier-ignore */
+// const _ = [
+//   '...',
+// ].map(encrypt);
+// console.log([_, _.map(decrypt)]);
 
 /* cspell:disable */
 const strings = {
@@ -38,10 +41,14 @@ const strings = {
   HEADER_RESUME: 'UmVzdW0lQzMlQTk=',
   PROJECTS_HEADING: 'V2hhdCUyMEklMjBEbw==',
   FOOTER_HEADING: 'VGFsayUyMFRvJTIwTWU=',
-  FOOTER_TEXT:
+  FOOTER_TEXT: [
+    'SW50ZXJlc3RlZCUzRiUyMFBsZWFzZSUyMHJlYWNoJTIwb3V0IQ==',
     'RG8lMjBvdXIlMjBpbnRlcmVzdHMlMjBhbGlnbiUzRiUyMFBsZWFzZSUyMGdldCUyMGluJTIwdG91Y2gh',
-  FOOTER_LOCATION:
-    'RGFzbWFyaSVDMyVCMWFzJTJDJTIwQ2F2aXRlJTJDJTIwUGhpbGlwcGluZXM=',
+  ],
+  FOOTER_LOCATION: [
+    'RGFzbWFyaSVDMyVCMWFzJTJDJTIwQ2F2aXRl',
+    'JTJDJTIwUGhpbGlwcGluZXM=',
+  ],
   FOOTER_CONTACT: 'KCUyQjYzKTklMjAxOSUyMDIwNSUyMDU1NjQ=',
   LINK_VCS: 'aHR0cHMlM0ElMkYlMkZnaXRodWIuY29tJTJGbWFyay1QMCUyRg==',
   LINK_SOCIAL:
