@@ -4,7 +4,7 @@ import strings, { decrypt } from '../strings.js';
 
 <footer class="min-vh-100 px-3 py-4 flex-maximize" id="contact">
   <div
-    class="container pb-4 flex-maximize align-items-center text-lowercase text-white text-end fs-4"
+    class="container flex-maximize align-items-center text-lowercase text-white text-end fs-4"
   >
     <section id="contact">
       <h2 class="font-heading fw-bold">{decrypt(strings.FOOTER_HEADING)}</h2>
@@ -78,6 +78,11 @@ import strings, { decrypt } from '../strings.js';
 
     .footer-location > span:nth-child(1) {
       display: unset !important;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .container {
+      padding-bottom: 3rem;
     }
   }
 
