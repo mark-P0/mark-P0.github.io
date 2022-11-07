@@ -4,9 +4,17 @@ import Header from '../components/Header.astro';
 import Main from '../components/Main.astro';
 import Footer from '../components/Footer.astro';
 import strings, { decrypt } from '../strings.js';
+
+const title = decrypt(strings.NAME);
+const description = strings.HEADER_TEXT.map(decrypt).join(' ');
 ---
 
-<HTML title={decrypt(strings.NAME)}>
+<!--  The following raises errors with TypeScript.
+  --  It actually works, but the language tools does not seem to support it yet...
+  --  https://github.com/withastro/prettier-plugin-astro#astro-allow-shorthand
+  --  https://github.com/withastro/language-tools/issues/225
+  -->
+<HTML {title} {description}>
   <Header />
   <Main />
   <Footer />
