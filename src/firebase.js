@@ -51,8 +51,8 @@ async function addNewProject(projectData) {
 
 async function getTopLevelData(root) {
   const snapshot = await get(child(ref(db), root));
-  if (!snapshot.exists()) throw `Error getting requested data at ${root}`;
-  return snapshot.val();
+  if (snapshot.exists()) return snapshot.val();
+  return null;
 }
 
 export { app, db, getTopLevelData };
