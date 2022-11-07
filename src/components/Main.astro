@@ -3,9 +3,9 @@ import ProjectList from './ProjectList.svelte';
 import strings, { decrypt } from '../strings.js';
 ---
 
-<main class="min-vh-100 p-3 pb-5 flex-maximize text-lowercase">
+<main class="min-vh-100 p-3 pb-5 flex-maximize text-lowercase bg-white">
   <div class="container flex-maximize">
-    <article class="vstack">
+    <article class="vstack" id="projects">
       <h2 class="font-heading text-primary fw-bold">
         {decrypt(strings.PROJECTS_HEADING)}
       </h2>

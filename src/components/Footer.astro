@@ -2,11 +2,11 @@
 import strings, { decrypt } from '../strings.js';
 ---
 
-<footer
-  class="min-vh-100 p-5 flex-maximize text-lowercase text-white text-end fs-4"
->
-  <div class="container d-flex justify-content-end align-items-center">
-    <section>
+<footer class="min-vh-100 px-3 pb-5 flex-maximize" id="contact">
+  <div
+    class="container flex-maximize align-items-center text-lowercase text-white text-end fs-4"
+  >
+    <section id="contact">
       <h2 class="font-heading fw-bold">{decrypt(strings.FOOTER_HEADING)}</h2>
       <p>{decrypt(strings.FOOTER_TEXT)}</p>
       <p class="font-heading fw-light">
@@ -29,6 +29,22 @@ import strings, { decrypt } from '../strings.js';
       </div>
     </section>
   </div>
+
+  <!--  `background-attachment: fixed;` behaves strangely in mobile.
+    --  It creates white sections on scroll that is not filled with the background image.
+    --  This is a remedy to that, which fixes the background to the viewport instead.
+    --  This requires other elements to "cover" it with their own backgrounds
+    --  if this is not meant to be shown behind them.
+    --  https://css-tricks.com/the-fixed-background-attachment-hack/
+    -->
+  <div class="position-fixed top-0 start-0 vw-100 vh-100 background">
+    <img
+      class="position-absolute w-100 h-100"
+      src="/bg-footer.jpg"
+      alt="Background image"
+    />
+    <div class="position-absolute w-100 h-100 overlay"></div>
+  </div>
 </footer>
 
 <style>
@@ -37,24 +53,16 @@ import strings, { decrypt } from '../strings.js';
     font-size: calc(3rem + 1.5vw);
   }
 
-  section {
-    min-width: calc(100% / 3);
+  .background {
+    z-index: -1000;
   }
-
-  footer {
-    --overlay-color-values: var(--bs-primary-rgb);
-    --overlay-color-opacity: 90%;
-    --overlay-color: rgb(
-      var(--overlay-color-values),
-      var(--overlay-color-opacity)
-    );
-    --overlay: linear-gradient(var(--overlay-color), var(--overlay-color));
-
-    background-image: var(--overlay), url('/bg-footer.jpg');
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 24%;
+  .background .overlay {
+    --color-values: var(--bs-primary-rgb);
+    --color-opacity: 90%;
+    background-color: rgba(var(--color-values), var(--color-opacity));
+  }
+  .background img {
+    object-fit: cover;
+    object-position: 25%;
   }
 </style>
