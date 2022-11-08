@@ -1,5 +1,6 @@
 ---
 import HTML from '../layouts/HTML.astro';
+import Navigation from '../components/Navigation.astro';
 import Header from '../components/Header.astro';
 import Main from '../components/Main.astro';
 import Footer from '../components/Footer.astro';
@@ -15,7 +16,9 @@ const description = strings.HEADER_TEXT.map(decrypt).join(' ');
   --  https://github.com/withastro/language-tools/issues/225
   -->
 <HTML {title} {description}>
-  <Header />
-  <Main />
-  <Footer />
+  <Navigation>
+    <Header />
+    <Main />
+    <Footer />
+  </Navigation>
 </HTML>
