@@ -11,9 +11,22 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:astro/recommended',
     'prettier',
   ],
-  overrides: [],
+  overrides: [
+    /**
+     * https://ota-meshi.github.io/eslint-plugin-astro/user-guide/
+     */
+    {
+      files: ['*.astro'],
+      parser: 'astro-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
+      },
+    },
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
