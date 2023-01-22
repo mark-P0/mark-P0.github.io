@@ -20,9 +20,8 @@ import {
 /*  It is fine to publicly expose configuration settings
  *  https://stackoverflow.com/a/37484053/
  */
-/* cspell:disable */
 const firebaseConfig = {
-  apiKey: 'AIzaSyBlnNJGBI4O-dYjzUOIR6PiMgT58M3bYbQ',
+  apiKey: 'AIzaSyBlnNJGBI4O-dYjzUOIR6PiMgT58M3bYbQ', // cspell:disable-line
   authDomain: 'mark-p0-a7b34.firebaseapp.com',
   projectId: 'mark-p0-a7b34',
   storageBucket: 'mark-p0-a7b34.appspot.com',
@@ -34,11 +33,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider('6LeY0-IiAAAAAPrzzMMEAasUOdrh_As6QdXdcD_l'),
+  provider: new ReCaptchaV3Provider('6LeY0-IiAAAAAPrzzMMEAasUOdrh_As6QdXdcD_l'), // cspell:disable-line
   isTokenAutoRefreshEnabled: true,
 });
 const db = getDatabase(app);
-/* cspell:enable */
 
 async function addNewProject(projectData) {
   const root = 'projects';
