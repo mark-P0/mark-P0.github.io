@@ -1,19 +1,14 @@
 {
   "name": "mark-p0.github.io",
   "version": "2.0.0",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/svelte": "^1.0.2",
-    "astro": "^1.6.0",
-    "svelte": "^3.52.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.48.2",
@@ -26,5 +21,10 @@
     "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.7.0",
     "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^1.0.2",
+    "astro": "^1.6.0",
+    "svelte": "^3.52.0"
   }
 }
