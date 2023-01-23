@@ -30,7 +30,7 @@ const appCheck = initializeAppCheck(app, {
 });
 const db = getDatabase(app);
 
-async function addNewProject(projectData) {
+async function addNewProject(projectData: string) {
   const root = 'projects';
 
   const newProjectKey = push(child(ref(db), root)).key;
@@ -39,7 +39,7 @@ async function addNewProject(projectData) {
   return result;
 }
 
-async function getTopLevelData(root) {
+async function getTopLevelData(root: string) {
   const snapshot = await get(child(ref(db), root));
   if (snapshot.exists()) return snapshot.val();
   return null;
