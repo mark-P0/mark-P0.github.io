@@ -8,6 +8,7 @@ import {
   LINK_VCS,
   LINK_SOCIAL,
   LINK_ADDRESS,
+  ALT_FOOTER_BG,
 } from '../strings.js';
 ---
 
@@ -61,7 +62,7 @@ import {
     <img
       class="position-absolute w-100 h-100"
       src="/bg-footer.jpg"
-      alt="Background image"
+      alt={decrypt(ALT_FOOTER_BG)}
     />
     <div class="position-absolute w-100 h-100 overlay"></div>
   </div>
