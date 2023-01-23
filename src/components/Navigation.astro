@@ -1,19 +1,25 @@
 ---
 ---
 
-<!--  Uses Bootstrap's Scrollspy
-  --  It requires two (2) elements:
-  --  - A wrapper for the contents to be spied on
-  --  - A set of links to reflect the "spying" status
-  -->
+{
+  /**
+   * Uses Bootstrap's Scrollspy
+   * It requires two (2) elements:
+   * - A wrapper for the contents to be spied on
+   * - A set of links to reflect the "spying" status
+   */
+}
 <div data-bs-spy="scroll" data-bs-target="#navigation" tabindex="0">
   <slot />
 </div>
 
 <div class="p-3" id="navigation">
-  <!--  Reversed to be able to select the "previous" siblings of the last item
-    --  Will be set back to proper order in CSS.
-    -->
+  {
+    /**
+     * Reversed to be able to select the "previous" siblings of the last item
+     * Will be set back to proper order in CSS.
+     */
+  }
   <a class="rounded-pill" href="#contact"></a>
   <a class="rounded-pill" href="#projects"></a>
   <a class="rounded-pill" href="#intro"></a>

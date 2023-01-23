@@ -51,13 +51,16 @@ import {
     </section>
   </div>
 
-  <!--  `background-attachment: fixed;` behaves strangely in mobile.
-    --  It creates white sections on scroll that is not filled with the background image.
-    --  This is a remedy to that, which fixes the background to the viewport instead.
-    --  This requires other elements to "cover" it with their own backgrounds
-    --  if this is not meant to be shown behind them.
-    --  https://css-tricks.com/the-fixed-background-attachment-hack/
-    -->
+  {
+    /**
+     * `background-attachment: fixed;` behaves strangely in mobile.
+     * It creates white sections on scroll that is not filled with the background image.
+     * This is a remedy to that, which fixes the background to the viewport instead.
+     * This requires other elements to "cover" it with their own backgrounds
+     * if this is not meant to be shown behind them.
+     * https://css-tricks.com/the-fixed-background-attachment-hack/
+     */
+  }
   <div class="position-fixed top-0 start-0 vw-100 vh-100 background">
     <img
       class="position-absolute w-100 h-100"
