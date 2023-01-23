@@ -1,0 +1,21 @@
+---
+/**
+ * Bootstrap's JS files have trouble being imported here
+ * as they expect to be run in the browser,
+ * when in fact this Astro block runs on compile time.
+ *
+ * A workaround is to import it inside a `<script>` tag
+ * in the HTML block, which I suppose gets recognized as
+ * being "run in the browser"...
+ *
+ * https://github.com/withastro/astro/issues/3784
+ * https://github.com/vitejs/vite/issues/3334
+ */
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+---
+
+<script>
+  import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+</script>
