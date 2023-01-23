@@ -3,11 +3,11 @@
  * https://developer.mozilla.org/en-US/docs/Glossary/Base64#solution_1_%E2%80%93_escaping_the_string_before_encoding_it
  */
 
-function encrypt(str) {
+function encrypt(str: string): string {
   return btoa(encodeURIComponent(str));
 }
 
-function decrypt(str) {
+function decrypt(str: string): string {
   return decodeURIComponent(atob(str));
 }
 
