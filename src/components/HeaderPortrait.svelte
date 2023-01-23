@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import LoadingIndicator from './LoadingIndicator.svelte';
+  import { decrypt, NAME } from '../strings.js';
 
   let src: string;
   const transitionParameters = {
@@ -25,7 +26,7 @@
       transition:fade={transitionParameters}
       class="position-absolute rounded img-fluid"
       {src}
-      alt="A person"
+      alt={decrypt(NAME)}
     />
   {:else}
     <LoadingIndicator />
