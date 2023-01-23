@@ -2,6 +2,7 @@
 import '../styles/utilities.css';
 import '../styles/fonts.css';
 import '../styles/scrollbars.css';
+import OGPMetaTags from '../components/OGPMetaTags.astro';
 import Navigation from '../components/Navigation.astro';
 import Header from '../components/Header.astro';
 import Main from '../components/Main.astro';
@@ -21,13 +22,14 @@ const description = strings.HEADER_TEXT.map(decrypt).join(' ');
     <link rel="icon" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
 
-    <!--  Open Graph Protocol
-      --  https://ogp.me/
-      -->
-    <meta property="og:title"       content={title} />
-    <meta property="og:type"        content="website" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image"       content="https://mark-P0.github.io/bg-footer.jpg" />
+    {/**
+      * The following raises errors with TypeScript.
+      * It actually works, but the language tools does not seem to support it yet...
+      * https://github.com/withastro/prettier-plugin-astro#astro-allow-shorthand
+      * https://github.com/withastro/language-tools/issues/225
+      */}
+    {/* @ts-ignore */}
+    <OGPMetaTags {title} {description} />
 
     <!-- Bootstrap, for reset and components -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
