@@ -8,8 +8,9 @@
   const MAX_PROJECT_CT = 6;
 
   onMount(async () => {
-    /*  I don't know why a regular top `import` does not work,
-     *  but an `import()` call does...
+    /**
+     * I don't know why a regular top `import` does not work,
+     * but an `import()` call does...
      */
     const firebase = await import('../firebase.js');
     const projects = await firebase.getTopLevelData('projects');

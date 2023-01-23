@@ -1,5 +1,6 @@
-/*  MDN Suggestions for Base64 Encryption
- *  https://developer.mozilla.org/en-US/docs/Glossary/Base64#solution_1_%E2%80%93_escaping_the_string_before_encoding_it
+/**
+ * MDN Suggestions for Base64 Encryption
+ * https://developer.mozilla.org/en-US/docs/Glossary/Base64#solution_1_%E2%80%93_escaping_the_string_before_encoding_it
  */
 
 function encrypt(str) {

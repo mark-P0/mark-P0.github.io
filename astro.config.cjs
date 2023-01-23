@@ -27,9 +27,10 @@ const { default: svelte } = await import('@astrojs/svelte');
 export default defineConfig({
   integrations: [svelte()],
 
-  /*  GitHub Pages configuration
-   *  As per the official docs
-   *  https://docs.astro.build/en/guides/deploy/github/
+  /**
+   * GitHub Pages configuration
+   * As per the official docs
+   * https://docs.astro.build/en/guides/deploy/github/
    */
   site: 'https://mark-p0.github.io',
 });

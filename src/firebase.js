@@ -1,6 +1,7 @@
-/*  As detailed in the official guides
- *  https://firebase.google.com/docs/web/setup
- *  https://firebase.google.com/docs/web/alt-setup
+/**
+ * As detailed in the official guides
+ * https://firebase.google.com/docs/web/setup
+ * https://firebase.google.com/docs/web/alt-setup
  */
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js';
@@ -17,8 +18,9 @@ import {
   ReCaptchaV3Provider,
 } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app-check.js';
 
-/*  It is fine to publicly expose configuration settings
- *  https://stackoverflow.com/a/37484053/
+/**
+ * It is fine to publicly expose configuration settings
+ * https://stackoverflow.com/a/37484053/
  */
 const firebaseConfig = {
   apiKey: 'AIzaSyBlnNJGBI4O-dYjzUOIR6PiMgT58M3bYbQ', // cspell:disable-line
