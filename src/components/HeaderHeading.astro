@@ -1,7 +1,7 @@
 ---
-import strings, { decrypt } from '../strings.js';
+import { decrypt, HEADER_MAIN } from '../strings.js';
 
-const main = strings.HEADER_MAIN.map(decrypt);
+const main = HEADER_MAIN.map(decrypt);
 ---
 
 <h1 class="font-heading text-primary fw-light">

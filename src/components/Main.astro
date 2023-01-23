@@ -1,6 +1,6 @@
 ---
 import ProjectList from './ProjectList.svelte';
-import strings, { decrypt } from '../strings.js';
+import { decrypt, PROJECTS_HEADING } from '../strings.js';
 ---
 
 <main
@@ -10,7 +10,7 @@ import strings, { decrypt } from '../strings.js';
   <div class="container flex-maximize">
     <article class="vstack">
       <h2 class="font-heading text-primary fw-bold">
-        {decrypt(strings.PROJECTS_HEADING)}
+        {decrypt(PROJECTS_HEADING)}
       </h2>
       <ProjectList client:visible />
     </article>

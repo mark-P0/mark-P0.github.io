@@ -1,5 +1,5 @@
 <script lang="ts">
-  import strings, { decrypt } from '../strings';
+  import { decrypt, HEADER_RESUME } from '../strings.js';
 
   let Button: HTMLButtonElement;
   let InvisibleAnchor: HTMLAnchorElement;
@@ -25,5 +25,5 @@
     Link to a file
   </a>
 
-  {decrypt(strings.HEADER_RESUME)}
+  {decrypt(HEADER_RESUME)}
 </button>

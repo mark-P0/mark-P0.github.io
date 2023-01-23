@@ -7,10 +7,10 @@ import Navigation from '../components/Navigation.astro';
 import Header from '../components/Header.astro';
 import Main from '../components/Main.astro';
 import Footer from '../components/Footer.astro';
-import strings, { decrypt } from '../strings.js';
+import { decrypt, NAME, HEADER_TEXT } from '../strings.js';
 
-const title = decrypt(strings.NAME);
-const description = strings.HEADER_TEXT.map(decrypt).join(' ');
+const title = decrypt(NAME);
+const description = HEADER_TEXT.map(decrypt).join(' ');
 ---
 
 <!DOCTYPE html>

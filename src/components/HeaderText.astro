@@ -1,10 +1,17 @@
 ---
 import ResumeButton from './ResumeButton.svelte';
-import strings, { decrypt } from '../strings.js';
+import {
+  decrypt,
+  HEADER_TEXT_HEADING_LINK,
+  HEADER_TEXT_HEADING,
+  HEADER_TEXT,
+  LINK_VCS,
+  LINK_SOCIAL,
+} from '../strings.js';
 
-const textHeadingLink = decrypt(strings.HEADER_TEXT_HEADING_LINK);
-const textHeading = decrypt(strings.HEADER_TEXT_HEADING);
-const text = strings.HEADER_TEXT.map(decrypt);
+const textHeadingLink = decrypt(HEADER_TEXT_HEADING_LINK);
+const textHeading = decrypt(HEADER_TEXT_HEADING);
+const text = HEADER_TEXT.map(decrypt);
 ---
 
 <section class="card border-primary border-stylized pt-4 pb-3 pe-3">
@@ -37,10 +44,10 @@ const text = strings.HEADER_TEXT.map(decrypt);
   <div
     class="card-footer text-primary hstack justify-content-end gap-3 fs-3 p-0"
   >
-    <a class="bi bi-github" href={decrypt(strings.LINK_VCS)}>
+    <a class="bi bi-github" href={decrypt(LINK_VCS)}>
       <span class="visually-hidden">External link</span>
     </a>
-    <a class="bi bi-linkedin" href={decrypt(strings.LINK_SOCIAL)}>
+    <a class="bi bi-linkedin" href={decrypt(LINK_SOCIAL)}>
       <span class="visually-hidden">External link</span>
     </a>
     <ResumeButton client:load />
