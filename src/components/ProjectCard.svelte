@@ -14,14 +14,17 @@
     delay: 250 * index,
     duration: 500,
   };
-  const alt = 'A screenshot of the project.';
 </script>
 
 <section transition:fade={transitionParameters} class="card shadow">
   <div
     class="position-relative overflow-hidden card-img-top bg-primary text-light flex-center"
   >
-    <img class="position-absolute top-0 w-100" src={screenshot} {alt} />
+    <img
+      class="position-absolute top-0 w-100"
+      src={screenshot}
+      alt="A screenshot of the project"
+    />
     <div class="position-absolute h-100 w-100 overlay" />
   </div>
 
