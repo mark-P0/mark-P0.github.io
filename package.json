@@ -25,6 +25,7 @@
   "dependencies": {
     "@astrojs/svelte": "^1.0.2",
     "astro": "^1.6.0",
+    "firebase": "^9.16.0",
     "svelte": "^3.52.0"
   }
 }

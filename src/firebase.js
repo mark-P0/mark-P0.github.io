@@ -4,19 +4,9 @@
  * https://firebase.google.com/docs/web/alt-setup
  */
 
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js';
-import {
-  getDatabase,
-  ref,
-  child,
-  push,
-  set,
-  get,
-} from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js';
-import {
-  initializeAppCheck,
-  ReCaptchaV3Provider,
-} from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app-check.js';
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, child, push, set, get } from 'firebase/database';
+import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 
 /**
  * It is fine to publicly expose configuration settings
@@ -55,4 +45,4 @@ async function getTopLevelData(root) {
   return null;
 }
 
-export { app, db, getTopLevelData };
+export { app, db, addNewProject, getTopLevelData };
