@@ -30,19 +30,34 @@ const appCheck = initializeAppCheck(app, {
 });
 const db = getDatabase(app);
 
-async function addNewProject(projectData: string) {
-  const root = 'projects';
-
-  const newProjectKey = push(child(ref(db), root)).key;
-  const result = await set(ref(db, `${root}/${newProjectKey}`), projectData);
-
-  return result;
+/**
+ * Generate ID at provided `key`
+ */
+export async function createId(key: string) {
+  return push(child(ref(db), key)).key;
 }
 
-async function getTopLevelData(root: string) {
-  const snapshot = await get(child(ref(db), root));
+/**
+ * Create data at provided `key`
+ */
+export async function create(key: string, value: unknown) {
+  await set(ref(db, key), value);
+}
+
+/**
+ * Read data at provided `key`
+ */
+export async function read(key: string) {
+  const snapshot = await get(child(ref(db), key));
   if (snapshot.exists()) return snapshot.val();
   return null;
 }
 
-export { app, db, addNewProject, getTopLevelData };
+/**
+ * Delete provided `key` by setting it to `null`
+ * `delete` is a reserved operator keyword, so `del` is used as name instead
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+ */
+export async function del(key: string) {
+  await set(ref(db, key), null);
+}

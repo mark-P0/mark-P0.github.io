@@ -10,7 +10,7 @@
 
   onMount(async () => {
     const firebase = await import('../firebase.js');
-    const portraitImgData = await firebase.getTopLevelData('portrait');
+    const portraitImgData = (await firebase.read('portrait')) as string;
 
     src = portraitImgData;
   });

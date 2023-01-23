@@ -13,7 +13,7 @@
      * but an `import()` call does...
      */
     const firebase = await import('../firebase.js');
-    const projects = await firebase.getTopLevelData('projects');
+    const projects = await firebase.read('projects');
     projectData = Object.values(projects).slice(0, MAX_PROJECT_CT) as any;
   });
 </script>

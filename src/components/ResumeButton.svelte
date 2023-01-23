@@ -6,7 +6,7 @@
 
   async function onClick() {
     const firebase = await import('../firebase.js');
-    const { data, filename } = await firebase.getTopLevelData('resume');
+    const { data, filename } = await firebase.read('resume');
 
     InvisibleAnchor.href = data;
     InvisibleAnchor.download = filename;
