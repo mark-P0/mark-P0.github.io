@@ -24,7 +24,7 @@
   {#if src}
     <img
       transition:fade={transitionParameters}
-      class="position-absolute rounded img-fluid"
+      class="position-absolute rounded img-fluid w-100"
       {src}
       alt={decrypt(NAME)}
     />
