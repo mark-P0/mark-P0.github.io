@@ -5,8 +5,9 @@
  */
 
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, child, push, set, get } from 'firebase/database';
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
+import { ReCaptchaV3Provider, initializeAppCheck } from 'firebase/app-check';
+import { child, get, getDatabase, push, ref, set } from 'firebase/database';
+import { getBlob, getStorage, ref as storageRef } from 'firebase/storage';
 
 /**
  * It is fine to publicly expose configuration settings
@@ -29,6 +30,7 @@ const appCheck = initializeAppCheck(app, {
   isTokenAutoRefreshEnabled: true,
 });
 const db = getDatabase(app);
+const storage = getStorage(app);
 
 /**
  * Generate ID at provided `key`
@@ -60,4 +62,10 @@ export async function read(key: string) {
  */
 export async function del(key: string) {
   await set(ref(db, key), null);
+}
+
+/** https://firebase.google.com/docs/storage/web/download-files */
+export async function getStorageBlob(path: string) {
+  const fileRef = storageRef(storage, path);
+  return await getBlob(fileRef);
 }
