@@ -4,15 +4,6 @@
   import LoadingIndicator from './LoadingIndicator.svelte';
   import { decrypt, NAME } from '../strings.js';
 
-  /** https://stackoverflow.com/a/61226119 */
-  function blobToBase64(blob: Blob): Promise<string> {
-    const reader = new FileReader();
-    reader.readAsDataURL(blob);
-    return new Promise<string>((resolve) => {
-      reader.onloadend = () => resolve(reader.result as string);
-    });
-  }
-
   let src: string;
   const transitionParameters = {
     duration: 500,
@@ -20,8 +11,8 @@
 
   onMount(async () => {
     const firebase = await import('../firebase.js');
-    const blob = await firebase.getStorageBlob('portrait.jpg');
-    const portraitImgData = await blobToBase64(blob);
+    const portraitImgData = (await firebase.read('portrait')) as string;
+
     src = portraitImgData;
   });
 </script>
