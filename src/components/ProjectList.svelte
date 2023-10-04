@@ -14,7 +14,9 @@
      */
     const firebase = await import('../firebase.js');
     const projects = await firebase.read('projects');
-    projectData = Object.values(projects).slice(0, MAX_PROJECT_CT) as any;
+    projectData = Object.values(projects)
+      .slice(-MAX_PROJECT_CT)
+      .reverse() as any;
   });
 </script>
 
