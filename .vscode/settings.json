@@ -1,7 +1,7 @@
 {
-    "cSpell.words": [
-        "tsconfigs",
-        "astro"
-    ],
-    "cSpell.allowCompoundWords": true
+  "[json][jsonc][javascript][markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": ["tsconfigs", "astro"],
+  "cSpell.allowCompoundWords": true
 }
