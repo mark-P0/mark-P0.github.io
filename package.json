@@ -1,7 +1,7 @@
 {
-    "name": "temp",
+    "name": "mark-p0.github.io",
     "type": "module",
-    "version": "0.0.1",
+    "version": "3.0.0",
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
