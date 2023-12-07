@@ -5,6 +5,6 @@
   "[astro]": {
     "editor.tabSize": 2
   },
-  "cSpell.words": ["tsconfigs", "astro"],
+  "cSpell.words": ["astrojs", "tsconfigs", "astro"],
   "cSpell.allowCompoundWords": true
 }
