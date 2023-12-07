@@ -1,14 +1,63 @@
 ---
-import { decrypt, HEADER_MAIN } from "../strings.js";
+import {
+  HEADER_MAIN,
+  HEADER_TEXT,
+  HEADER_TEXT_HEADING,
+  HEADER_TEXT_HEADING_LINK,
+  LINK_SOCIAL,
+  LINK_VCS,
+  decrypt,
+} from "../strings.js";
 
-const main = HEADER_MAIN.map(decrypt);
+const title = HEADER_MAIN.map(decrypt);
+
+const textHeadingLink = decrypt(HEADER_TEXT_HEADING_LINK);
+const textHeading = decrypt(HEADER_TEXT_HEADING);
+const text = HEADER_TEXT.map(decrypt);
+
+const linkGitHub = decrypt(LINK_VCS);
+const linkLinkedIn = decrypt(LINK_SOCIAL);
 ---
 
 <header class="h-screen grid header-grid-template">
-  <h1 class="header-grid-title font-title">
-    {main[0]}
-    <span class="font-bold">{main[1]}</span>
+  <h1 class="header-grid-title font-title text-primary text-8xl">
+    {title[0]}
+    <span class="font-bold">{title[1]}</span>
   </h1>
-  <p class="header-grid-description">description</p>
+
+  <section class="header-grid-description">
+    <h2 class="font-title text-primary font-bold text-3xl">
+      <a href={textHeadingLink} target="_blank">{textHeading}</a>
+    </h2>
+
+    <p>
+      {text[0]}
+      <span class="font-bold">{text[1]}</span>
+      <span class="capitalize">{text[2]}</span>
+      {text[3]}
+      <em>{text[4]}</em>
+
+      <br />
+
+      {text[5]}
+      <span class="font-bold">{text[6]}</span>
+      {text[7]}
+      <span class="font-bold">{text[8]}</span>
+      {text[9]}
+      <span class="font-bold">{text[10]}</span>
+      {text[11]}
+
+      <br />
+
+      <span class="opacity-25">{text[12]}</span>
+    </p>
+
+    <footer class="flex flex-row-reverse gap-4">
+      <div>Resumé link button</div>
+      <a href={linkLinkedIn} target="_blank">LinkedIn logo</a>
+      <a href={linkGitHub} target="_blank">GitHub logo</a>
+    </footer>
+  </section>
+
   <div class="header-grid-portrait">portrait</div>
 </header>
