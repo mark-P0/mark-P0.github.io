@@ -4,7 +4,7 @@
   },
   "[astro]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.sortImports": true
     },
     "editor.tabSize": 2
   },
