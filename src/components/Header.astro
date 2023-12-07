@@ -1,9 +1,14 @@
 ---
+import { decrypt, HEADER_MAIN } from "../strings.js";
 
+const main = HEADER_MAIN.map(decrypt);
 ---
 
 <header class="h-screen grid header-grid-template">
-  <h1 class="header-grid-title">title</h1>
+  <h1 class="header-grid-title">
+    {main[0]}
+    <span class="font-bold">{main[1]}</span>
+  </h1>
   <p class="header-grid-description">description</p>
   <div class="header-grid-portrait">portrait</div>
 </header>

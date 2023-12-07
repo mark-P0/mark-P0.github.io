@@ -1,5 +1,5 @@
 {
-  "[json][jsonc][javascript][markdown][css]": {
+  "[json][jsonc][javascript][markdown][css][typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[astro]": {
