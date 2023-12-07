@@ -1,4 +1,5 @@
 ---
+import Icon from "astro-icon";
 import {
   HEADER_MAIN,
   HEADER_TEXT,
@@ -52,10 +53,14 @@ const linkLinkedIn = decrypt(LINK_SOCIAL);
       <span class="text-primary/50">{text[12]}</span>
     </p>
 
-    <footer class="flex flex-row-reverse gap-4">
+    <footer class="flex flex-row-reverse items-center gap-4">
       <div>Resumé link button</div>
-      <a href={linkLinkedIn} target="_blank">LinkedIn logo</a>
-      <a href={linkGitHub} target="_blank">GitHub logo</a>
+      <a href={linkLinkedIn} target="_blank">
+        <Icon name="simple-icons:linkedin" class="h-8 w-8" />
+      </a>
+      <a href={linkGitHub} target="_blank">
+        <Icon name="simple-icons:github" class="h-8 w-8" />
+      </a>
     </footer>
   </section>
 
