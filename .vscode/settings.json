@@ -3,6 +3,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[astro]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
     "editor.tabSize": 2
   },
   "cSpell.words": ["astrojs", "tsconfigs", "astro"],
