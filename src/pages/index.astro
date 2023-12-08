@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Profile from "../components/Profile.astro";
+import { ALT_FOOTER_BG } from "../strings.ts";
 import "../styles/fonts.css";
 import "../styles/tailwind.css";
 ---
@@ -30,6 +31,11 @@ import "../styles/tailwind.css";
       class="min-h-screen grid items-center bg-primary/90 text-white selection:bg-white selection:text-primary"
     >
       <Footer />
+      <img
+        src="/footer.jpg"
+        alt={ALT_FOOTER_BG}
+        class="-z-10 fixed top-0 h-full w-full object-cover object-[25%]"
+      />
     </footer>
   </body>
 </html>
