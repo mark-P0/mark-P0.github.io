@@ -58,4 +58,5 @@ export const ALT_FOOTER_BG =
   "QXV0aG9yJTIwYmVoaW5kJTIwaG9iYnklMjBBcmR1aW5vJTIwY2lyY3VpdA==";
 
 export const RESUME_FILENAME = "UmVzdW1lJTJDTWFya0pvaG5Qb3NvLnBkZg==";
+export const PORTRAIT_FILENAME = "UG9ydHJhaXQlMkNNYXJrSm9oblBvc28uanBn";
 /* cspell:enable */
