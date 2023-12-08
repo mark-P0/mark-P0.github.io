@@ -52,15 +52,23 @@ import { ResumeLinkButton } from "./ResumeLinkButton.jsx";
       <span class="text-primary/25">{HEADER_TEXT[12]}</span>
     </p>
 
-    <footer class="mt-6 flex flex-row-reverse items-center gap-4">
-      <ResumeLinkButton client:load />
-      <a href={LINK_VCS} target="_blank">
-        <SiLinkedin class="h-8 w-8" />
-      </a>
-      <a href={LINK_SOCIAL} target="_blank">
-        <SiGithub class="h-8 w-8" />
-      </a>
-    </footer>
+    <address class="not-italic">
+      <ul class="mt-6 flex flex-row-reverse items-center gap-4">
+        <li class="flex">
+          <ResumeLinkButton client:load />
+        </li>
+        <li>
+          <a href={LINK_VCS} target="_blank">
+            <SiLinkedin class="h-8 w-8" />
+          </a>
+        </li>
+        <li>
+          <a href={LINK_SOCIAL} target="_blank">
+            <SiGithub class="h-8 w-8" />
+          </a>
+        </li>
+      </ul>
+    </address>
   </section>
 
   <figure
