@@ -1,5 +1,5 @@
 ---
-import Icon from "astro-icon";
+import { SiGithub, SiLinkedin } from "solid-icons/si";
 import {
   HEADER_MAIN,
   HEADER_TEXT,
@@ -10,8 +10,8 @@ import {
   NAME,
   decrypt,
 } from "../strings.js";
-import { ResumeLinkButton } from "./ResumeLinkButton.jsx";
 import { HeaderPortrait } from "./HeaderPortrait.jsx";
+import { ResumeLinkButton } from "./ResumeLinkButton.jsx";
 
 const title = HEADER_MAIN.map(decrypt);
 
@@ -66,10 +66,10 @@ const portraitLabel = decrypt(NAME);
       <footer class="flex flex-row-reverse items-center gap-4">
         <ResumeLinkButton client:load />
         <a href={linkLinkedIn} target="_blank">
-          <Icon name="simple-icons:linkedin" class="h-8 w-8" />
+          <SiLinkedin class="h-8 w-8" />
         </a>
         <a href={linkGitHub} target="_blank">
-          <Icon name="simple-icons:github" class="h-8 w-8" />
+          <SiGithub class="h-8 w-8" />
         </a>
       </footer>
     </section>
