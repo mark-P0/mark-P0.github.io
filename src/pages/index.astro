@@ -1,6 +1,7 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import Contacts from "../components/Contacts.astro";
+import Profile from "../components/Profile.astro";
+import { ALT_FOOTER_BG } from "../strings.ts";
 import "../styles/fonts.css";
 import "../styles/tailwind.css";
 ---
@@ -15,13 +16,31 @@ import "../styles/tailwind.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body
     class="font-text text-primary lowercase selection:bg-primary selection:text-white"
   >
-    <Header />
-    <section class="bg-[url('/texture.png')] bg-white h-screen">
+    <header
+      class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
+    >
+      <Profile />
+    </header>
+
+    <section
+      class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
+    >
       projects
     </section>
-    <Footer />
+
+    <footer
+      class="min-h-screen grid items-center bg-primary/90 text-white selection:bg-white selection:text-primary"
+    >
+      <Contacts />
+      <img
+        src="/footer.jpg"
+        alt={ALT_FOOTER_BG}
+        class="-z-10 fixed top-0 h-full w-full object-cover object-[25%]"
+      />
+    </footer>
   </body>
 </html>

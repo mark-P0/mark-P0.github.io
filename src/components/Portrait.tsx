@@ -3,7 +3,7 @@ import { Show, createEffect, createSignal } from "solid-js";
 import { getPortrait } from "../firebase/storage.ts";
 import { NAME } from "../strings.ts";
 
-export function HeaderPortrait() {
+export function Portrait() {
   const [src, setSrc] = createSignal<string | null>(null);
   createEffect(() => {
     async function initializeSrc() {
