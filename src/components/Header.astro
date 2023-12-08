@@ -10,6 +10,7 @@ import {
   decrypt,
 } from "../strings.js";
 import { ResumeLinkButton } from "./ResumeLinkButton.jsx";
+import { HeaderPortrait } from "./HeaderPortrait.jsx";
 
 const title = HEADER_MAIN.map(decrypt);
 
@@ -70,8 +71,6 @@ const linkLinkedIn = decrypt(LINK_SOCIAL);
       </footer>
     </section>
 
-    <div class="header-grid-portrait w-full aspect-[3/4] bg-primary/50">
-      portrait
-    </div>
+    <HeaderPortrait />
   </article>
 </header>
