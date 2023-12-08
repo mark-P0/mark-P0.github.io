@@ -37,7 +37,7 @@ const portraitLabel = decrypt(NAME);
     <section
       class="header-grid-description bg-white border-primary border-2 rounded-lg border-t-0 border-l-0 rounded-bl-none p-4 md:pl-6 mt-6 md:mt-0"
     >
-      <h2 class="font-title text-primary font-extrabold text-3xl">
+      <h2 class="mb-2 font-title text-primary font-extrabold text-3xl">
         <a href={textHeadingLink} target="_blank">{textHeading}</a>
       </h2>
 
@@ -48,7 +48,7 @@ const portraitLabel = decrypt(NAME);
         {text[3]}
         <em>{text[4]}</em>
 
-        <br />
+        <br class="block content-[''] mb-1" />
 
         {text[5]}
         <span class="font-bold">{text[6]}</span>
@@ -58,12 +58,12 @@ const portraitLabel = decrypt(NAME);
         <span class="font-bold">{text[10]}</span>
         {text[11]}
 
-        <br />
+        <br class="block content-[''] mb-1" />
 
         <span class="text-primary/25">{text[12]}</span>
       </p>
 
-      <footer class="flex flex-row-reverse items-center gap-4">
+      <footer class="mt-6 flex flex-row-reverse items-center gap-4">
         <ResumeLinkButton client:load />
         <a href={linkLinkedIn} target="_blank">
           <SiLinkedin class="h-8 w-8" />
