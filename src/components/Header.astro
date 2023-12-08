@@ -74,8 +74,12 @@ const portraitLabel = decrypt(NAME);
       </footer>
     </section>
 
-    <figure class="header-grid-portrait">
-      <HeaderPortrait client:load />
+    <figure
+      class="header-grid-portrait relative w-full aspect-[3/4] bg-primary/50 rounded-lg overflow-hidden"
+    >
+      <div class="absolute w-full h-full grid place-items-center">
+        <HeaderPortrait client:load />
+      </div>
       <figcaption class="sr-only">{portraitLabel}</figcaption>
     </figure>
   </article>
