@@ -1,7 +1,8 @@
 ---
 import Contacts from "../components/Contacts.astro";
 import Profile from "../components/Profile.astro";
-import { ALT_FOOTER_BG } from "../strings.ts";
+import { ProjectList } from "../components/ProjectList.tsx";
+import { ALT_FOOTER_BG, PROJECTS_HEADING } from "../strings.ts";
 import "../styles/fonts.css";
 import "../styles/tailwind.css";
 ---
@@ -20,16 +21,26 @@ import "../styles/tailwind.css";
   <body
     class="font-text text-primary lowercase selection:bg-primary selection:text-white"
   >
-    <header
+    <!-- <header
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
       <Profile />
-    </header>
+    </header> -->
 
     <section
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
-      projects
+      {
+        /* TODO Double check if the following classes works good with the proper project list */
+      }
+      <article
+        class="container mx-auto py-12 px-8 min-h-full grid grid-rows-[auto_1fr]"
+      >
+        <h2 class="font-title font-extrabold text-5xl bg-green-500">
+          {PROJECTS_HEADING}
+        </h2>
+        <ProjectList />
+      </article>
     </section>
 
     <footer
