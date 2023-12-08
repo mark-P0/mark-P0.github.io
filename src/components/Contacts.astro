@@ -22,30 +22,34 @@ import { SiGithub, SiLinkedin } from "solid-icons/si";
     <span class="hidden md:block">{FOOTER_TEXT[1]}</span>
   </p>
 
-  <ul class="font-title font-thin text-2xl">
-    <li class="flex flex-row-reverse items-center gap-4">
-      <BsGeoAltFill />
-      <span>
-        {FOOTER_LOCATION[0]}<span class="hidden md:inline"
-          >{FOOTER_LOCATION[1]}</span
-        >
-      </span>
-    </li>
-    <li class="flex flex-row-reverse items-center gap-4">
-      <BsTelephoneFill />
-      <span class="text-xl">{FOOTER_CONTACT}</span>
-    </li>
-  </ul>
+  <address class="not-italic">
+    <ul class="font-title font-thin text-2xl">
+      <li class="flex flex-row-reverse items-center gap-4">
+        <BsGeoAltFill />
+        <span>
+          {FOOTER_LOCATION[0]}<span class="hidden md:inline"
+            >{FOOTER_LOCATION[1]}</span
+          >
+        </span>
+      </li>
+      <li class="flex flex-row-reverse items-center gap-4">
+        <BsTelephoneFill />
+        <span class="text-xl">{FOOTER_CONTACT}</span>
+      </li>
+    </ul>
+  </address>
 
-  <ul class="flex flex-row-reverse gap-4">
-    <a href={LINK_ADDRESS} target="_blank">
-      <BsEnvelopeFill class="h-8 w-8" />
-    </a>
-    <a href={LINK_SOCIAL} target="_blank">
-      <SiLinkedin class="h-8 w-8" />
-    </a>
-    <a href={LINK_VCS} target="_blank">
-      <SiGithub class="h-8 w-8" />
-    </a>
-  </ul>
+  <address class="not-italic">
+    <ul class="flex flex-row-reverse gap-4">
+      <a href={LINK_ADDRESS} target="_blank">
+        <BsEnvelopeFill class="h-8 w-8" />
+      </a>
+      <a href={LINK_SOCIAL} target="_blank">
+        <SiLinkedin class="h-8 w-8" />
+      </a>
+      <a href={LINK_VCS} target="_blank">
+        <SiGithub class="h-8 w-8" />
+      </a>
+    </ul>
+  </address>
 </article>
