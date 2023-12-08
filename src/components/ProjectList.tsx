@@ -51,15 +51,17 @@ export function ProjectList() {
     initializeProjects();
   });
 
+  const last6Projects = () => projects()?.slice(-6).reverse() ?? null;
+
   const Fallback = (
     <div class="grid place-items-center">
       <LoadingIndicator />
     </div>
   );
   return (
-    <Show when={projects() !== null} fallback={Fallback}>
+    <Show when={last6Projects() !== null} fallback={Fallback}>
       <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <For each={projects()}>
+        <For each={last6Projects()}>
           {(project) => (
             <li>
               <ProjectCard project={project} />
