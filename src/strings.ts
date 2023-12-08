@@ -56,4 +56,6 @@ export const LINK_SOCIAL =
 export const LINK_ADDRESS = "bWFpbHRvJTNBbWFya2pvaG4ucG9zbyU0MG91dGxvb2sucGg=";
 export const ALT_FOOTER_BG =
   "QXV0aG9yJTIwYmVoaW5kJTIwaG9iYnklMjBBcmR1aW5vJTIwY2lyY3VpdA==";
+
+export const RESUME_FILENAME = "UmVzdW1lJTJDTWFya0pvaG5Qb3NvLnBkZg==";
 /* cspell:enable */
