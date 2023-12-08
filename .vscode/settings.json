@@ -1,11 +1,11 @@
 {
-  "[json][jsonc][javascriptreact][typescriptreact][astro]": {
+  "[json][jsonc][javascript][typescript][javascriptreact][typescriptreact][astro]": {
     "editor.tabSize": 2
   },
-  "[json][jsonc][javascript][markdown][css][typescript][javascriptreact][typescriptreact]": {
+  "[json][jsonc][markdown][css][javascript][typescript][javascriptreact][typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[javascriptreact][typescriptreact][astro]": {
+  "[javascript][typescript][javascriptreact][typescriptreact][astro]": {
     "editor.codeActionsOnSave": {
       "source.sortImports": true
     }
