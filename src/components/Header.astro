@@ -21,55 +21,57 @@ const linkGitHub = decrypt(LINK_VCS);
 const linkLinkedIn = decrypt(LINK_SOCIAL);
 ---
 
-<header
-  class="min-h-screen grid header-grid-template py-12 px-8 md:px-16 lg:px-24"
->
-  <h1
-    class="header-grid-title font-title font-thin text-primary text-5xl lg:text-8xl lg:pl-6 lg:pt-6"
-  >
-    {title[0]}
-    <span class="font-extrabold">{title[1]}</span>
-  </h1>
+<header class="min-h-screen grid items-center py-12 px-8 md:px-16 lg:px-24">
+  <article class="grid header-grid-template">
+    <h1
+      class="header-grid-title font-title font-thin text-primary text-5xl lg:text-8xl lg:pl-6 lg:pt-6"
+    >
+      {title[0]}
+      <span class="font-extrabold">{title[1]}</span>
+    </h1>
 
-  <section
-    class="header-grid-description bg-white border-primary border-2 rounded-lg border-t-0 border-l-0 rounded-bl-none p-4 md:pl-6 mt-6 md:mt-4"
-  >
-    <h2 class="font-title text-primary font-extrabold text-3xl">
-      <a href={textHeadingLink} target="_blank">{textHeading}</a>
-    </h2>
+    <section
+      class="header-grid-description bg-white border-primary border-2 rounded-lg border-t-0 border-l-0 rounded-bl-none p-4 md:pl-6 mt-6 md:mt-4"
+    >
+      <h2 class="font-title text-primary font-extrabold text-3xl">
+        <a href={textHeadingLink} target="_blank">{textHeading}</a>
+      </h2>
 
-    <p>
-      {text[0]}
-      <span class="font-bold">{text[1]}</span>
-      <span class="capitalize">{text[2]}</span>
-      {text[3]}
-      <em>{text[4]}</em>
+      <p>
+        {text[0]}
+        <span class="font-bold">{text[1]}</span>
+        <span class="capitalize">{text[2]}</span>
+        {text[3]}
+        <em>{text[4]}</em>
 
-      <br />
+        <br />
 
-      {text[5]}
-      <span class="font-bold">{text[6]}</span>
-      {text[7]}
-      <span class="font-bold">{text[8]}</span>
-      {text[9]}
-      <span class="font-bold">{text[10]}</span>
-      {text[11]}
+        {text[5]}
+        <span class="font-bold">{text[6]}</span>
+        {text[7]}
+        <span class="font-bold">{text[8]}</span>
+        {text[9]}
+        <span class="font-bold">{text[10]}</span>
+        {text[11]}
 
-      <br />
+        <br />
 
-      <span class="text-primary/50">{text[12]}</span>
-    </p>
+        <span class="text-primary/50">{text[12]}</span>
+      </p>
 
-    <footer class="flex flex-row-reverse items-center gap-4">
-      <ResumeLinkButton client:load />
-      <a href={linkLinkedIn} target="_blank">
-        <Icon name="simple-icons:linkedin" class="h-8 w-8" />
-      </a>
-      <a href={linkGitHub} target="_blank">
-        <Icon name="simple-icons:github" class="h-8 w-8" />
-      </a>
-    </footer>
-  </section>
+      <footer class="flex flex-row-reverse items-center gap-4">
+        <ResumeLinkButton client:load />
+        <a href={linkLinkedIn} target="_blank">
+          <Icon name="simple-icons:linkedin" class="h-8 w-8" />
+        </a>
+        <a href={linkGitHub} target="_blank">
+          <Icon name="simple-icons:github" class="h-8 w-8" />
+        </a>
+      </footer>
+    </section>
 
-  <div class="header-grid-portrait w-full h-full bg-primary/50">portrait</div>
+    <div class="header-grid-portrait w-full aspect-[3/4] bg-primary/50">
+      portrait
+    </div>
+  </article>
 </header>
