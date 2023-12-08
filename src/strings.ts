@@ -1,8 +1,11 @@
 /**
- * MDN Suggestions for Base64 Encryption
+ * MDN suggestions for base-64 encryption
+ *
  * Basic solution is deemed sufficient as these are used only to naively obfuscate string information
+ *
  * https://developer.mozilla.org/en-US/docs/Glossary/Base64#solution_1_%E2%80%93_escaping_the_string_before_encoding_it
  */
+null;
 
 export function encrypt(str: string): string {
   return btoa(encodeURIComponent(str));
