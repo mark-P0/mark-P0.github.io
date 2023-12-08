@@ -21,22 +21,19 @@ import "../styles/tailwind.css";
   <body
     class="font-text text-primary lowercase selection:bg-primary selection:text-white"
   >
-    <!-- <header
+    <header
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
       <Profile />
-    </header> -->
+    </header>
 
     <section
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
-      {
-        /* TODO Double check if the following classes works good with the proper project list */
-      }
       <article
-        class="container mx-auto py-12 px-8 min-h-full grid grid-rows-[auto_1fr]"
+        class="container mx-auto py-12 px-8 min-h-full grid grid-rows-[auto_1fr] gap-6"
       >
-        <h2 class="font-title font-extrabold text-5xl bg-green-500">
+        <h2 class="font-title font-extrabold text-5xl">
           {PROJECTS_HEADING}
         </h2>
         <ProjectList client:load />
@@ -44,7 +41,7 @@ import "../styles/tailwind.css";
     </section>
 
     <footer
-      class="min-h-screen grid items-center bg-primary/90 text-white selection:bg-white selection:text-primary"
+      class="min-h-screen grid items-center bg-primary/90 text-white selection:!bg-white selection:!text-primary"
     >
       <Contacts />
       <img
