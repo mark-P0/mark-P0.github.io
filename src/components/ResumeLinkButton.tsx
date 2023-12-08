@@ -3,9 +3,12 @@ import { getResume } from "../firebase/storage.ts";
 
 export function ResumeLinkButton() {
   const [href, setHref] = createSignal("#");
-  createEffect(async function initializeHref() {
-    const url = await getResume();
-    setHref(url);
+  createEffect(() => {
+    async function initializeHref() {
+      const url = await getResume();
+      setHref(url);
+    }
+    initializeHref();
   });
 
   return (
