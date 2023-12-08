@@ -1,17 +1,16 @@
 {
-  "[json][jsonc][javascriptreact][typescriptreact]": {
+  "[json][jsonc][javascript][typescript][javascriptreact][typescriptreact][astro]": {
     "editor.tabSize": 2
   },
-  "[json][jsonc][javascript][markdown][css][typescript][javascriptreact][typescriptreact]": {
+  "[json][jsonc][markdown][css][javascript][typescript][javascriptreact][typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[astro]": {
+  "[javascript][typescript][javascriptreact][typescriptreact][astro]": {
     "editor.codeActionsOnSave": {
       "source.sortImports": true
-    },
-    "editor.tabSize": 2
+    }
   },
-  "cSpell.words": ["resumé", "astrojs", "tsconfigs", "astro"],
+  "cSpell.words": ["rtdb", "resumé", "astrojs", "tsconfigs", "astro"],
   "cSpell.allowCompoundWords": true,
   "files.associations": {
     "*.css": "tailwindcss"
