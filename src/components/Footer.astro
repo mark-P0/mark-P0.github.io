@@ -17,9 +17,11 @@ import { SiGithub, SiLinkedin } from "solid-icons/si";
   class="min-h-screen grid items-center bg-primary/90 text-white selection:bg-white selection:text-primary"
 >
   <article class="container mx-auto py-12 px-8 grid gap-4 text-end">
-    <h2 class="font-title font-extrabold text-7xl">{FOOTER_HEADING}</h2>
+    <h2 class="font-title font-extrabold text-5xl md:text-6xl lg:text-7xl">
+      {FOOTER_HEADING}
+    </h2>
 
-    <p class="text-3xl">
+    <p class="text-2xl lg:text-3xl tracking-tight md:tracking-normal">
       <span class="block md:hidden">{FOOTER_TEXT[0]}</span>
       <span class="hidden md:block">{FOOTER_TEXT[1]}</span>
     </p>
