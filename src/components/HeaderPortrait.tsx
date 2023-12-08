@@ -3,10 +3,6 @@ import { Show, createEffect, createSignal } from "solid-js";
 import { getPortrait } from "../firebase/storage.ts";
 import { NAME, decrypt } from "../strings.ts";
 
-async function sleep(secs: number) {
-  return new Promise((resolve) => setTimeout(resolve, secs * 1000));
-}
-
 export function HeaderPortrait() {
   const [src, setSrc] = createSignal<string | null>(null);
   createEffect(() => {
