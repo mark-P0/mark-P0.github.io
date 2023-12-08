@@ -8,6 +8,10 @@ export default {
       colors: {
         primary: "rgb(25, 35, 55)",
       },
+      fontFamily: {
+        title: "Nunito",
+        text: "PT Sans",
+      },
     },
   },
   plugins: [TailwindScrollbar],

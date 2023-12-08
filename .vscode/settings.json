@@ -1,10 +1,21 @@
 {
-  "[json][jsonc][javascript][markdown]": {
+  "[json][jsonc][javascriptreact][typescriptreact]": {
+    "editor.tabSize": 2
+  },
+  "[json][jsonc][javascript][markdown][css][typescript][javascriptreact][typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[astro]": {
+    "editor.codeActionsOnSave": {
+      "source.sortImports": true
+    },
     "editor.tabSize": 2
   },
-  "cSpell.words": ["astrojs", "tsconfigs", "astro"],
-  "cSpell.allowCompoundWords": true
+  "cSpell.words": ["resumé", "astrojs", "tsconfigs", "astro"],
+  "cSpell.allowCompoundWords": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js"
 }
