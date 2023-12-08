@@ -8,21 +8,9 @@ import {
   LINK_SOCIAL,
   LINK_VCS,
   NAME,
-  decrypt,
 } from "../strings.js";
 import { HeaderPortrait } from "./HeaderPortrait.jsx";
 import { ResumeLinkButton } from "./ResumeLinkButton.jsx";
-
-const title = HEADER_MAIN.map(decrypt);
-
-const textHeadingLink = decrypt(HEADER_TEXT_HEADING_LINK);
-const textHeading = decrypt(HEADER_TEXT_HEADING);
-const text = HEADER_TEXT.map(decrypt);
-
-const linkGitHub = decrypt(LINK_VCS);
-const linkLinkedIn = decrypt(LINK_SOCIAL);
-
-const portraitLabel = decrypt(NAME);
 ---
 
 <header class="min-h-screen grid items-center py-12 px-8 md:px-16 lg:px-24">
@@ -30,45 +18,47 @@ const portraitLabel = decrypt(NAME);
     <h1
       class="header-grid-title font-title font-thin text-primary text-5xl lg:text-8xl lg:pl-6 lg:pt-6"
     >
-      {title[0]}
-      <span class="font-extrabold">{title[1]}</span>
+      {HEADER_MAIN[0]}
+      <span class="font-extrabold">{HEADER_MAIN[1]}</span>
     </h1>
 
     <section
       class="header-grid-description bg-white border-primary border-2 rounded-lg border-t-0 border-l-0 rounded-bl-none p-4 md:pl-6 mt-6 md:mt-0"
     >
       <h2 class="mb-2 font-title text-primary font-extrabold text-3xl">
-        <a href={textHeadingLink} target="_blank">{textHeading}</a>
+        <a href={HEADER_TEXT_HEADING_LINK} target="_blank">
+          {HEADER_TEXT_HEADING}
+        </a>
       </h2>
 
       <p>
-        {text[0]}
-        <span class="font-bold">{text[1]}</span>
-        <span class="capitalize">{text[2]}</span>
-        {text[3]}
-        <em>{text[4]}</em>
+        {HEADER_TEXT[0]}
+        <span class="font-bold">{HEADER_TEXT[1]}</span>
+        <span class="capitalize">{HEADER_TEXT[2]}</span>
+        {HEADER_TEXT[3]}
+        <em>{HEADER_TEXT[4]}</em>
 
         <br class="block content-[''] mb-1" />
 
-        {text[5]}
-        <span class="font-bold">{text[6]}</span>
-        {text[7]}
-        <span class="font-bold">{text[8]}</span>
-        {text[9]}
-        <span class="font-bold">{text[10]}</span>
-        {text[11]}
+        {HEADER_TEXT[5]}
+        <span class="font-bold">{HEADER_TEXT[6]}</span>
+        {HEADER_TEXT[7]}
+        <span class="font-bold">{HEADER_TEXT[8]}</span>
+        {HEADER_TEXT[9]}
+        <span class="font-bold">{HEADER_TEXT[10]}</span>
+        {HEADER_TEXT[11]}
 
         <br class="block content-[''] mb-1" />
 
-        <span class="text-primary/25">{text[12]}</span>
+        <span class="text-primary/25">{HEADER_TEXT[12]}</span>
       </p>
 
       <footer class="mt-6 flex flex-row-reverse items-center gap-4">
         <ResumeLinkButton client:load />
-        <a href={linkLinkedIn} target="_blank">
+        <a href={LINK_VCS} target="_blank">
           <SiLinkedin class="h-8 w-8" />
         </a>
-        <a href={linkGitHub} target="_blank">
+        <a href={LINK_SOCIAL} target="_blank">
           <SiGithub class="h-8 w-8" />
         </a>
       </footer>
@@ -80,7 +70,7 @@ const portraitLabel = decrypt(NAME);
       <div class="absolute w-full h-full grid place-items-center">
         <HeaderPortrait client:load />
       </div>
-      <figcaption class="sr-only">{portraitLabel}</figcaption>
+      <figcaption class="sr-only">{NAME}</figcaption>
     </figure>
   </article>
 </header>
