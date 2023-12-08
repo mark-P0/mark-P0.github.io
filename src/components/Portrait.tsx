@@ -1,7 +1,7 @@
-import { BsCircleFill } from "solid-icons/bs";
 import { Show, createEffect, createSignal } from "solid-js";
 import { getPortrait } from "../firebase/storage.ts";
 import { NAME } from "../strings.ts";
+import { LoadingIndicator } from "./LoadingIndicator.tsx";
 
 export function Portrait() {
   const [src, setSrc] = createSignal<string | null>(null);
@@ -14,10 +14,7 @@ export function Portrait() {
   });
 
   return (
-    <Show
-      when={src() !== null}
-      fallback={<BsCircleFill class="w-12 h-12 animate-ping" />}
-    >
+    <Show when={src() !== null} fallback={<LoadingIndicator />}>
       <img src={src()!} alt={NAME} class="w-full h-full" />
     </Show>
   );
