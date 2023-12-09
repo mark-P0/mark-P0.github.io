@@ -53,17 +53,25 @@ import { ResumeLinkButton } from "./ResumeLinkButton.jsx";
     </p>
 
     <address class="not-italic">
-      <ul class="mt-6 flex flex-row-reverse items-center gap-4">
+      <ul class="mt-6 flex flex-row-reverse items-center">
         <li class="flex">
           <ResumeLinkButton client:load />
         </li>
         <li>
-          <a href={LINK_VCS} target="_blank">
+          <a
+            href={LINK_VCS}
+            target="_blank"
+            class="block p-2 rounded transition hover:bg-primary hover:text-white"
+          >
             <BsLinkedin class="h-8 w-8" />
           </a>
         </li>
         <li>
-          <a href={LINK_SOCIAL} target="_blank">
+          <a
+            href={LINK_SOCIAL}
+            target="_blank"
+            class="block p-2 rounded transition hover:bg-primary hover:text-white"
+          >
             <BsGithub class="h-8 w-8" />
           </a>
         </li>
