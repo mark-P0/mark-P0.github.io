@@ -9,6 +9,7 @@ import {
   LINK_ADDRESS,
   LINK_SOCIAL,
   LINK_VCS,
+  NAME,
 } from "../strings.ts";
 ---
 
@@ -47,6 +48,7 @@ import {
         class="block p-2 rounded transition hover:bg-white hover:text-primary active:scale-90"
       >
         <BsEnvelopeFill class="h-8 w-8" />
+        <span class="sr-only">Send email to {LINK_ADDRESS}</span>
       </a>
       <a
         href={LINK_SOCIAL}
@@ -54,6 +56,7 @@ import {
         class="block p-2 rounded transition hover:bg-white hover:text-primary active:scale-90"
       >
         <BsLinkedin class="h-8 w-8" />
+        <span class="sr-only">Go to {NAME}'s LinkedIn profile</span>
       </a>
       <a
         href={LINK_VCS}
@@ -61,6 +64,7 @@ import {
         class="block p-2 rounded transition hover:bg-white hover:text-primary active:scale-90"
       >
         <BsGithub class="h-8 w-8" />
+        <span class="sr-only">Go to {NAME}'s GitHub profile</span>
       </a>
     </ul>
   </address>
