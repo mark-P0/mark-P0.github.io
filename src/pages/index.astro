@@ -1,6 +1,7 @@
 ---
 import Contacts from "../components/Contacts.astro";
 import Navbar from "../components/Navbar.astro";
+import OGPMetaTags from "../components/OGPMetaTags.astro";
 import Profile from "../components/Profile.astro";
 import { ProjectList } from "../components/ProjectList.tsx";
 import { ALT_FOOTER_BG, PROJECTS_HEADING } from "../strings.ts";
@@ -28,6 +29,8 @@ const scrollbars = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <OGPMetaTags />
+
     <title>Document</title>
   </head>
 

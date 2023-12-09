@@ -1,0 +1,14 @@
+---
+import { HEADER_TEXT, NAME } from "../strings.ts";
+
+const title = NAME;
+const description = HEADER_TEXT.join(" ");
+---
+
+{/* Required tags as per https://ogp.me/ */}
+<meta property="og:title" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://mark-P0.github.io/footer.jpg" />
+<meta property="og:url" content="https://mark-P0.github.io/" />
+
+<meta property="og:description" content={description} />
