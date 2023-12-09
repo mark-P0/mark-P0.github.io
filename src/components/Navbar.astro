@@ -5,7 +5,15 @@ const navbarPos = [
   ...["md:bottom-auto", "md:right-0", "md:translate-x-0"], // Medium above: Top Right
 ].join(" ");
 
-const anchor = "w-6 h-6 rounded-full transition";
+const anchor = [
+  "w-6 h-6 rounded-full",
+  ...[
+    "shadow-md",
+    "shadow-white/50",
+    "group-data-[section=talk-to-me]/section:shadow-primary/50",
+  ],
+  "transition",
+].join(" ");
 const anchorProfile = [
   anchor,
   ...[
