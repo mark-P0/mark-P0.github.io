@@ -2,11 +2,8 @@
 
 ## Dependencies
 
-- [Astro](https://astro.build/)
-  - Static site generation
-  - With option for interactive components
-- [Firebase](https://firebase.google.com/)
-  - Dynamic content storage
+- [Astro](https://astro.build/), for static site generation with option for interactive components
+- [Firebase](https://firebase.google.com/), for dynamic content storage
 
 ---
 
@@ -17,10 +14,7 @@
 
 ## Credits
 
-- [Transparent Textures](https://www.transparenttextures.com/)
-  - Ambient background texture
-- https://wesbos.com/
-- The Odin Project
-  - [Personal Portfolio](https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-personal-portfolio) design
-- [`extcolors`](https://github.com/CairX/extract-colors-py) (_Python_)
-  - For extracting color palettes from images
+- [Transparent Textures](https://www.transparenttextures.com/), for ambient background texture
+  - https://wesbos.com/
+- The Odin Project, for the [Personal Portfolio](https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-personal-portfolio) guidelines
+- [`extcolors`](https://github.com/CairX/extract-colors-py) (_Python_), for extracting color palettes from images
