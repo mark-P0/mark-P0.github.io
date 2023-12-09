@@ -4,9 +4,11 @@ import Navbar from "../components/Navbar.astro";
 import OGPMetaTags from "../components/OGPMetaTags.astro";
 import Profile from "../components/Profile.astro";
 import { ProjectList } from "../components/ProjectList.tsx";
-import { ALT_FOOTER_BG, PROJECTS_HEADING } from "../strings.ts";
+import { ALT_FOOTER_BG, NAME, PROJECTS_HEADING } from "../strings.ts";
 import "../styles/fonts.css";
 import "../styles/tailwind.css";
+
+const title = NAME;
 
 /**
  * Changing scrollbar colors are kind of... jank on Chrome.
@@ -35,7 +37,7 @@ const scrollbars = [
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <title>Document</title>
+    <title>{title}</title>
   </head>
 
   <body
