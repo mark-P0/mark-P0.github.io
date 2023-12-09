@@ -15,23 +15,31 @@ export function ProjectCard(p: { project: Project }) {
         <div class="absolute w-full h-full bg-primary/25"></div>
       </div>
 
-      <figcaption class="flex flex-col bg-white border-primary border-2 border-t-0 border-l-0 rounded-lg rounded-tr-none p-4">
+      <figcaption class="flex flex-col bg-white border-primary border-2 border-t-0 border-l-0 rounded-lg rounded-tr-none p-5 pr-3 pb-3">
         <h2 class="mb-2 font-title font-extrabold text-3xl">
           {p.project.name}
         </h2>
 
         <p class="mb-6">{p.project.description}</p>
 
-        <ul class="mt-auto flex flex-row-reverse gap-4">
+        <ul class="mt-auto flex flex-row-reverse">
           <Show when={p.project.livePreview !== undefined}>
             <li>
-              <a href={p.project.livePreview} target="_blank">
+              <a
+                href={p.project.livePreview}
+                target="_blank"
+                class="block p-2 rounded transition hover:bg-primary hover:text-white"
+              >
                 <FiExternalLink class="w-6 h-6" />
               </a>
             </li>
           </Show>
           <li>
-            <a href={p.project.sourceCode} target="_blank">
+            <a
+              href={p.project.sourceCode}
+              target="_blank"
+              class="block p-2 rounded transition hover:bg-primary hover:text-white"
+            >
               <FiCode class="w-6 h-6" />
             </a>
           </li>
