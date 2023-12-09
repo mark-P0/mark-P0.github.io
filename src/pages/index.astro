@@ -29,7 +29,7 @@ const navbarPos = [
 ---
 
 <!doctype html>
-<html lang="en" class={`scroll-smooth ${scrollbars}`}>
+<html lang="en" class={`group/section scroll-smooth ${scrollbars}`}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,9 +43,18 @@ const navbarPos = [
     class="font-text text-primary lowercase selection:bg-primary selection:text-white"
   >
     <nav class={`${navbarPos} flex md:grid gap-4 p-4`}>
-      <a href="#who-am-i" class="w-6 h-6 rounded-full bg-red-500"></a>
-      <a href="#what-i-do" class="w-6 h-6 rounded-full bg-red-500"></a>
-      <a href="#talk-to-me" class="w-6 h-6 rounded-full bg-red-500"></a>
+      <a
+        href="#who-am-i"
+        class="w-6 h-6 rounded-full bg-primary group-data-[section=talk-to-me]/section:bg-white"
+      ></a>
+      <a
+        href="#what-i-do"
+        class="w-6 h-6 rounded-full bg-primary group-data-[section=talk-to-me]/section:bg-white"
+      ></a>
+      <a
+        href="#talk-to-me"
+        class="w-6 h-6 rounded-full bg-primary group-data-[section=talk-to-me]/section:bg-white"
+      ></a>
     </nav>
 
     <header
