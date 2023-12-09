@@ -10,7 +10,7 @@ export function ProjectCard(p: { project: Project }) {
         <img
           src={p.project.screenshot}
           alt={`A screenshot of the app ${p.project.name}`}
-          class="absolute top-0"
+          class="absolute top-0 group-hover:-top-[30%] transition-[top] duration-1000 ease-out"
         />
         <div class="absolute w-full h-full bg-primary/75 group-hover:bg-transparent duration-500"></div>
       </div>
