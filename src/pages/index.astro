@@ -20,6 +20,12 @@ const scrollbars = [
     "data-[section=talk-to-me]:scrollbar-track-primary",
   ],
 ].join(" ");
+
+const navbarPos = [
+  "fixed",
+  ...["bottom-0", "right-1/2", "translate-x-1/2"], // Small (default): Bottom Center
+  ...["md:bottom-auto", "md:right-0", "md:translate-x-0"], // Medium above: Top Right
+].join(" ");
 ---
 
 <!doctype html>
@@ -36,7 +42,7 @@ const scrollbars = [
   <body
     class="font-text text-primary lowercase selection:bg-primary selection:text-white"
   >
-    <nav class="fixed right-0 grid gap-4 p-4">
+    <nav class={`${navbarPos} flex md:grid gap-4 p-4`}>
       <a href="#who-am-i" class="w-6 h-6 rounded-full bg-red-500"></a>
       <a href="#what-i-do" class="w-6 h-6 rounded-full bg-red-500"></a>
       <a href="#talk-to-me" class="w-6 h-6 rounded-full bg-red-500"></a>
