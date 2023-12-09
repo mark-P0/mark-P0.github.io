@@ -27,14 +27,14 @@ export function ProjectCard(p: { project: Project }) {
   const icons = () => [...mapTagsToIcons(p.project)];
 
   return (
-    <figure class="group h-full rounded-lg overflow-hidden grid grid-rows-[auto_1fr] shadow-lg">
+    <figure class="group/card h-full rounded-lg overflow-hidden grid grid-rows-[auto_1fr] shadow-lg">
       <div class="relative overflow-hidden aspect-[21/9]">
         <img
           src={p.project.screenshot}
           alt={`A screenshot of the app ${p.project.name}`}
-          class="absolute top-0 group-hover:-top-[30%] transition-[top] duration-1000 ease-out"
+          class="absolute top-0 group-hover/card:-top-[30%] transition-[top] duration-1000 ease-out"
         />
-        <div class="absolute w-full h-full bg-primary/75 group-hover:bg-transparent duration-500"></div>
+        <div class="absolute w-full h-full bg-primary/75 group-hover/card:bg-transparent duration-500"></div>
       </div>
 
       <figcaption class="flex flex-col bg-white border-primary border-2 border-t-0 border-l-0 rounded-lg rounded-tr-none p-5">
