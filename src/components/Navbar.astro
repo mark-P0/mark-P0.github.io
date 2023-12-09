@@ -47,9 +47,15 @@ const anchorContacts = [
 ---
 
 <nav class={`z-10 ${navbarPos} flex md:grid gap-4 p-4`}>
-  <a href="#who-am-i" class={`${anchorProfile}`}></a>
-  <a href="#what-i-do" class={`${anchorProjects}`}></a>
-  <a href="#talk-to-me" class={`${anchorContacts}`}></a>
+  <a href="#who-am-i" class={`${anchorProfile}`}>
+    <span class="sr-only">Jump to profile</span>
+  </a>
+  <a href="#what-i-do" class={`${anchorProjects}`}>
+    <span class="sr-only">Jump to projects</span>
+  </a>
+  <a href="#talk-to-me" class={`${anchorContacts}`}>
+    <span class="sr-only">Jump to contacts</span>
+  </a>
 </nav>
 
 <script>
