@@ -23,7 +23,7 @@ const scrollbars = [
 ---
 
 <!doctype html>
-<html lang="en" class={`${scrollbars}`}>
+<html lang="en" class={`scroll-smooth ${scrollbars}`}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,6 +36,12 @@ const scrollbars = [
   <body
     class="font-text text-primary lowercase selection:bg-primary selection:text-white"
   >
+    <nav class="fixed right-0 grid gap-4 p-4">
+      <a href="#profile" class="w-6 h-6 rounded-full bg-red-500"></a>
+      <a href="#projects" class="w-6 h-6 rounded-full bg-red-500"></a>
+      <a href="#contacts" class="w-6 h-6 rounded-full bg-red-500"></a>
+    </nav>
+
     <header
       id="profile"
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
