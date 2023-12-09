@@ -1,8 +1,9 @@
 ---
-import { HEADER_TEXT, NAME } from "../strings.ts";
-
-const title = NAME;
-const description = HEADER_TEXT.join(" ");
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
 ---
 
 {/* Required tags as per https://ogp.me/ */}
