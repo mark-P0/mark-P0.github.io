@@ -4,11 +4,17 @@ import Navbar from "../components/Navbar.astro";
 import OGPMetaTags from "../components/OGPMetaTags.astro";
 import Profile from "../components/Profile.astro";
 import { ProjectList } from "../components/ProjectList.tsx";
-import { ALT_FOOTER_BG, NAME, PROJECTS_HEADING } from "../strings.ts";
+import {
+  ALT_FOOTER_BG,
+  HEADER_TEXT,
+  NAME,
+  PROJECTS_HEADING,
+} from "../strings.ts";
 import "../styles/fonts.css";
 import "../styles/tailwind.css";
 
 const title = NAME;
+const description = HEADER_TEXT.join(" ");
 
 /**
  * Changing scrollbar colors are kind of... jank on Chrome.
@@ -32,12 +38,12 @@ const scrollbars = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <OGPMetaTags />
+    <meta name="description" content={description} />
+    <title>{title}</title>
 
     {/* Generated from https://icon.kitchen/ */}
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-    <title>{title}</title>
   </head>
 
   <body
