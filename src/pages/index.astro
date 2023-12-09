@@ -5,18 +5,29 @@ import { ProjectList } from "../components/ProjectList.tsx";
 import { ALT_FOOTER_BG, PROJECTS_HEADING } from "../strings.ts";
 import "../styles/fonts.css";
 import "../styles/tailwind.css";
+
+/**
+ * Changing scrollbar colors are kind of... jank on Chrome.
+ * They do not update until "interacted" with, e.g. hovered
+ *
+ * On Firefox it works well enough.
+ */
+const scrollbars = [
+  "scrollbar-thin",
+  ...["scrollbar-thumb-primary", "scrollbar-track-white"],
+  ...[
+    "data-[section=contacts]:scrollbar-thumb-white",
+    "data-[section=contacts]:scrollbar-track-primary",
+  ],
+].join(" ");
 ---
 
 <!doctype html>
-<html
-  lang="en"
-  class="scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent"
->
+<html lang="en" class={`${scrollbars}`}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
     <script>
       import "../scrollspy.ts";
     </script>
