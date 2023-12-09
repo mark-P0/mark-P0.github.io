@@ -18,24 +18,30 @@ const anchorProfile = [
   anchor,
   ...[
     "bg-primary/50",
+    "hover:bg-primary",
     "group-data-[section=who-am-i]/scrollspy:bg-primary",
     "group-data-[section=talk-to-me]/scrollspy:bg-white/50",
+    "group-data-[section=talk-to-me]/scrollspy:hover:bg-white",
   ],
 ].join(" ");
 const anchorProjects = [
   anchor,
   ...[
     "bg-primary/50",
+    "hover:bg-primary",
     "group-data-[section=what-i-do]/scrollspy:bg-primary",
     "group-data-[section=talk-to-me]/scrollspy:bg-white/50",
+    "group-data-[section=talk-to-me]/scrollspy:hover:bg-white",
   ],
 ].join(" ");
 const anchorContacts = [
   anchor,
   ...[
     "bg-primary/50",
+    "hover:bg-primary",
     // "group-data-[section=talk-to-me]/scrollspy:bg-primary", // Unnecessary as this condition has a definite color
     "group-data-[section=talk-to-me]/scrollspy:bg-white",
+    "group-data-[section=talk-to-me]/scrollspy:hover:bg-white", // Should be redundant...
   ],
 ].join(" ");
 ---
