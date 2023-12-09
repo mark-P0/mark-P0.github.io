@@ -4,19 +4,36 @@ const navbarPos = [
   ...["bottom-0", "right-1/2", "translate-x-1/2"], // Small (default): Bottom Center
   ...["md:bottom-auto", "md:right-0", "md:translate-x-0"], // Medium above: Top Right
 ].join(" ");
+
+const anchor = "w-6 h-6 rounded-full transition";
+const anchorProfile = [
+  anchor,
+  ...[
+    "bg-primary/50",
+    "group-data-[section=who-am-i]/section:bg-primary",
+    "group-data-[section=talk-to-me]/section:bg-white/50",
+  ],
+].join(" ");
+const anchorProjects = [
+  anchor,
+  ...[
+    "bg-primary/50",
+    "group-data-[section=what-i-do]/section:bg-primary",
+    "group-data-[section=talk-to-me]/section:bg-white/50",
+  ],
+].join(" ");
+const anchorContacts = [
+  anchor,
+  ...[
+    "bg-primary/50",
+    // "group-data-[section=talk-to-me]/section:bg-primary", // Unnecessary as this condition has a definite color
+    "group-data-[section=talk-to-me]/section:bg-white",
+  ],
+].join(" ");
 ---
 
 <nav class={`${navbarPos} flex md:grid gap-4 p-4`}>
-  <a
-    href="#who-am-i"
-    class="w-6 h-6 rounded-full bg-primary/50 group-data-[section=who-am-i]/section:bg-primary group-data-[section=talk-to-me]/section:bg-white/50 transition"
-  ></a>
-  <a
-    href="#what-i-do"
-    class="w-6 h-6 rounded-full bg-primary/50 group-data-[section=what-i-do]/section:bg-primary group-data-[section=talk-to-me]/section:bg-white/50 transition"
-  ></a>
-  <a
-    href="#talk-to-me"
-    class="w-6 h-6 rounded-full bg-primary/50 group-data-[section=talk-to-me]/section:bg-white transition"
-  ></a>
+  <a href="#who-am-i" class={`${anchorProfile}`}></a>
+  <a href="#what-i-do" class={`${anchorProjects}`}></a>
+  <a href="#talk-to-me" class={`${anchorContacts}`}></a>
 </nav>
