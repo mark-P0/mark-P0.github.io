@@ -15,9 +15,11 @@ export function ResumeLinkButton() {
     <a
       href={href()}
       target="_blank"
-      class="bg-primary text-white px-4 py-2 rounded-full font-title font-bold text-xl"
+      class="font-title font-bold text-xl rounded p-2 py-3 group transition hover:bg-primary"
     >
-      Resumé
+      <span class="bg-primary text-white rounded p-2 py-1 transition group-hover:bg-white group-hover:text-primary">
+        Resumé
+      </span>
     </a>
   );
 }
