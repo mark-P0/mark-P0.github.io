@@ -16,18 +16,24 @@ import "../styles/tailwind.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <script>
+      import "../scrollspy.ts";
+    </script>
   </head>
 
   <body
     class="font-text text-primary lowercase selection:bg-primary selection:text-white"
   >
     <header
+      id="profile"
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
-      <Profile />
+      <!-- <Profile /> -->
     </header>
 
     <section
+      id="projects"
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
       <article
@@ -36,11 +42,12 @@ import "../styles/tailwind.css";
         <h2 class="font-title font-extrabold text-5xl">
           {PROJECTS_HEADING}
         </h2>
-        <ProjectList client:load />
+        <!-- <ProjectList client:load /> -->
       </article>
     </section>
 
     <footer
+      id="contacts"
       class="min-h-screen grid items-center bg-primary/90 text-white selection:!bg-white selection:!text-primary"
     >
       <Contacts />
