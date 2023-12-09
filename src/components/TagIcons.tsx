@@ -1,10 +1,13 @@
 import type { IconProps, IconTypes } from "solid-icons";
 import {
   SiBootstrap,
+  SiElectron,
   SiFirebase,
   SiJavascript,
   SiPython,
+  SiRaspberrypi,
   SiReact,
+  SiSqlite,
   SiTailwindcss,
   SiTypescript,
   SiVite,
@@ -116,3 +119,6 @@ TagIconMap.set("Bootstrap", SiBootstrap);
 TagIconMap.set("Python", SiPython);
 TagIconMap.set("Kivy", KivyIcon);
 TagIconMap.set("OpenWeatherMap", OpenWeatherMapIcon);
+TagIconMap.set("Electron", SiElectron);
+TagIconMap.set("SQLite", SiSqlite);
+TagIconMap.set("Raspberry Pi", SiRaspberrypi);
