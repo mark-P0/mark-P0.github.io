@@ -79,8 +79,9 @@ const anchorContacts = [
     else if (isContactsVisible) root.setAttribute("data-section", "talk-to-me");
   }
 
+  /** https://stackoverflow.com/a/69020644 */
   const options: IntersectionObserverInit = {
-    threshold: 0.5, // Mark element as visible when half of it is, well, visible
+    rootMargin: "-50% 0% -50% 0%", // Makes the observer only look at the very center of the root for intersections
   };
   const observer = new IntersectionObserver(callback, options);
 
