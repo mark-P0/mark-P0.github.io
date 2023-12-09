@@ -1,17 +1,30 @@
 ---
 import Contacts from "../components/Contacts.astro";
+import Navbar from "../components/Navbar.astro";
 import Profile from "../components/Profile.astro";
 import { ProjectList } from "../components/ProjectList.tsx";
 import { ALT_FOOTER_BG, PROJECTS_HEADING } from "../strings.ts";
 import "../styles/fonts.css";
 import "../styles/tailwind.css";
+
+/**
+ * Changing scrollbar colors are kind of... jank on Chrome.
+ * They do not update until "interacted" with, e.g. hovered
+ *
+ * On Firefox it works well enough.
+ */
+const scrollbars = [
+  "scrollbar-thin",
+  ...["scrollbar-thumb-primary", "scrollbar-track-white"],
+  ...[
+    "data-[section=talk-to-me]:scrollbar-thumb-white", // Invert on `talk-to-me` section
+    "data-[section=talk-to-me]:scrollbar-track-primary",
+  ],
+].join(" ");
 ---
 
 <!doctype html>
-<html
-  lang="en"
-  class="scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent"
->
+<html lang="en" class={`scroll-smooth ${scrollbars}`}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,13 +34,16 @@ import "../styles/tailwind.css";
   <body
     class="font-text text-primary lowercase selection:bg-primary selection:text-white"
   >
+    <Navbar />
     <header
+      id="who-am-i"
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
       <Profile />
     </header>
 
     <section
+      id="what-i-do"
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
       <article
@@ -41,6 +57,7 @@ import "../styles/tailwind.css";
     </section>
 
     <footer
+      id="talk-to-me"
       class="min-h-screen grid items-center bg-primary/90 text-white selection:!bg-white selection:!text-primary"
     >
       <Contacts />
