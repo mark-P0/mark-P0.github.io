@@ -62,6 +62,9 @@ export function ProjectCard(p: { project: Project }) {
                 class="block p-2 rounded transition hover:bg-primary hover:text-white active:scale-90"
               >
                 <FiExternalLink class="w-6 h-6" />
+                <span class="sr-only">
+                  Go to live preview of "{p.project.name}"
+                </span>
               </a>
             </li>
           </Show>
@@ -72,6 +75,9 @@ export function ProjectCard(p: { project: Project }) {
               class="block p-2 rounded transition hover:bg-primary hover:text-white active:scale-90"
             >
               <FiCode class="w-6 h-6" />
+              <span class="sr-only">
+                Read source code for "{p.project.name}"
+              </span>
             </a>
           </li>
         </ul>

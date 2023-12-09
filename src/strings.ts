@@ -65,9 +65,7 @@ export const LINK_VCS = decrypt(
 export const LINK_SOCIAL = decrypt(
   "aHR0cHMlM0ElMkYlMkZ3d3cubGlua2VkaW4uY29tJTJGaW4lMkZwb3NvLW1hcmtqb2huJTJG"
 );
-export const LINK_ADDRESS = decrypt(
-  "bWFpbHRvJTNBbWFya2pvaG4ucG9zbyU0MG91dGxvb2sucGg="
-);
+export const LINK_ADDRESS = decrypt("bWFya2pvaG4ucG9zbyU0MG91dGxvb2sucGg=");
 export const ALT_FOOTER_BG = decrypt(
   "QXV0aG9yJTIwYmVoaW5kJTIwaG9iYnklMjBBcmR1aW5vJTIwY2lyY3VpdA=="
 );
