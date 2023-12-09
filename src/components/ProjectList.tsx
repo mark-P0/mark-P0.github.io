@@ -2,8 +2,30 @@ import { FiCode, FiExternalLink } from "solid-icons/fi";
 import { For, Show, createEffect, createSignal } from "solid-js";
 import { getProjects, type Project } from "../firebase/rtdb.ts";
 import { LoadingIndicator } from "./LoadingIndicator.tsx";
+import { TagIconMap } from "./TagIcons.tsx";
+
+function* mapTagsToIcons(project: Project) {
+  const { tags, name } = project;
+
+  if (tags === undefined) {
+    console.warn(`Project "${name}" has no tags`, project);
+    return;
+  }
+
+  for (const tag of tags) {
+    if (!TagIconMap.has(tag)) {
+      console.warn(`Tag "${tag}" not mapped?`);
+      continue;
+    }
+
+    const icon = TagIconMap.get(tag)!;
+    yield [tag, icon] as const;
+  }
+}
 
 export function ProjectCard(p: { project: Project }) {
+  const icons = () => [...mapTagsToIcons(p.project)];
+
   return (
     <figure class="group h-full rounded-lg overflow-hidden grid grid-rows-[auto_1fr] shadow-lg">
       <div class="relative overflow-hidden aspect-[21/9]">
@@ -16,9 +38,18 @@ export function ProjectCard(p: { project: Project }) {
       </div>
 
       <figcaption class="flex flex-col bg-white border-primary border-2 border-t-0 border-l-0 rounded-lg rounded-tr-none p-5">
-        <h2 class="mb-2 font-title font-extrabold text-3xl">
-          {p.project.name}
-        </h2>
+        <header class="mb-2 flex flex-wrap items-center gap-x-4">
+          <h2 class="font-title font-extrabold text-3xl">{p.project.name}</h2>
+          <ul class="flex gap-2">
+            <For each={icons()}>
+              {([tag, Icon]) => (
+                <li>
+                  <Icon class="w-4 h-4" title={tag} />
+                </li>
+              )}
+            </For>
+          </ul>
+        </header>
 
         <p class="mb-6">{p.project.description}</p>
 
