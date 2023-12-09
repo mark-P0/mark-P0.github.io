@@ -28,7 +28,7 @@ export function ProjectCard(p: { project: Project }) {
               <a
                 href={p.project.livePreview}
                 target="_blank"
-                class="block p-2 rounded transition hover:bg-primary hover:text-white"
+                class="block p-2 rounded transition hover:bg-primary hover:text-white active:scale-90"
               >
                 <FiExternalLink class="w-6 h-6" />
               </a>
@@ -38,7 +38,7 @@ export function ProjectCard(p: { project: Project }) {
             <a
               href={p.project.sourceCode}
               target="_blank"
-              class="block p-2 rounded transition hover:bg-primary hover:text-white"
+              class="block p-2 rounded transition hover:bg-primary hover:text-white active:scale-90"
             >
               <FiCode class="w-6 h-6" />
             </a>
