@@ -10,7 +10,15 @@
       "source.sortImports": true
     }
   },
-  "cSpell.words": ["rtdb", "resumé", "astrojs", "tsconfigs", "astro"],
+  "cSpell.words": [
+    "svgrepo",
+    "kivy",
+    "rtdb",
+    "resumé",
+    "astrojs",
+    "tsconfigs",
+    "astro"
+  ],
   "cSpell.allowCompoundWords": true,
   "files.associations": {
     "*.css": "tailwindcss"
