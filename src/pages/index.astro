@@ -1,5 +1,6 @@
 ---
 import Contacts from "../components/Contacts.astro";
+import Navbar from "../components/Navbar.astro";
 import Profile from "../components/Profile.astro";
 import { ProjectList } from "../components/ProjectList.tsx";
 import { ALT_FOOTER_BG, PROJECTS_HEADING } from "../strings.ts";
@@ -20,12 +21,6 @@ const scrollbars = [
     "data-[section=talk-to-me]:scrollbar-track-primary",
   ],
 ].join(" ");
-
-const navbarPos = [
-  "fixed",
-  ...["bottom-0", "right-1/2", "translate-x-1/2"], // Small (default): Bottom Center
-  ...["md:bottom-auto", "md:right-0", "md:translate-x-0"], // Medium above: Top Right
-].join(" ");
 ---
 
 <!doctype html>
@@ -42,21 +37,7 @@ const navbarPos = [
   <body
     class="font-text text-primary lowercase selection:bg-primary selection:text-white"
   >
-    <nav class={`${navbarPos} flex md:grid gap-4 p-4`}>
-      <a
-        href="#who-am-i"
-        class="w-6 h-6 rounded-full bg-primary/50 group-data-[section=who-am-i]/section:bg-primary group-data-[section=talk-to-me]/section:bg-white/50 transition"
-      ></a>
-      <a
-        href="#what-i-do"
-        class="w-6 h-6 rounded-full bg-primary/50 group-data-[section=what-i-do]/section:bg-primary group-data-[section=talk-to-me]/section:bg-white/50 transition"
-      ></a>
-      <a
-        href="#talk-to-me"
-        class="w-6 h-6 rounded-full bg-primary/50 group-data-[section=talk-to-me]/section:bg-white transition"
-      ></a>
-    </nav>
-
+    <Navbar />
     <header
       id="who-am-i"
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
