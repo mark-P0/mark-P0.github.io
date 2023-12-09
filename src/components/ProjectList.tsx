@@ -14,7 +14,7 @@ function* mapTagsToIcons(project: Project) {
 
   for (const tag of tags) {
     if (!TagIconMap.has(tag)) {
-      console.warn(`Tag "${tag}" not mapped?`);
+      console.warn(`Tag "${tag}" not mapped?`, project);
       continue;
     }
 
