@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+{/* Required tags as per https://ogp.me/ */}
+<meta property="og:title" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://mark-P0.github.io/footer.jpg" />
+<meta property="og:url" content="https://mark-P0.github.io/" />
+
+<meta property="og:description" content={description} />

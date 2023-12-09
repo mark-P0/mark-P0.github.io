@@ -1,0 +1,87 @@
+---
+import Contacts from "../components/Contacts.astro";
+import Navbar from "../components/Navbar.astro";
+import OGPMetaTags from "../components/OGPMetaTags.astro";
+import Profile from "../components/Profile.astro";
+import { ProjectList } from "../components/ProjectList.tsx";
+import {
+  ALT_FOOTER_BG,
+  HEADER_TEXT,
+  NAME,
+  PROJECTS_HEADING,
+} from "../strings.ts";
+import "../styles/fonts.css";
+import "../styles/tailwind.css";
+
+const title = NAME;
+const description = HEADER_TEXT.join(" ");
+
+/**
+ * Changing scrollbar colors are kind of... jank on Chrome.
+ * They do not update until "interacted" with, e.g. hovered
+ *
+ * On Firefox it works well enough.
+ */
+const scrollbars = [
+  "scrollbar-thin",
+  ...["scrollbar-thumb-primary", "scrollbar-track-white"],
+  ...[
+    "data-[section=talk-to-me]:scrollbar-thumb-white", // Invert on `talk-to-me` section
+    "data-[section=talk-to-me]:scrollbar-track-primary",
+  ],
+].join(" ");
+---
+
+<!doctype html>
+<html lang="en" class={`scroll-smooth ${scrollbars}`}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <OGPMetaTags title={title} description={description} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    {/* Generated from https://icon.kitchen/ */}
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+
+  <body
+    class="font-text text-primary lowercase selection:bg-primary selection:text-white"
+  >
+    <Navbar />
+    <header
+      id="who-am-i"
+      class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
+    >
+      <Profile />
+    </header>
+
+    <section
+      id="what-i-do"
+      class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
+    >
+      <article
+        class="container mx-auto py-12 px-8 min-h-full grid grid-rows-[auto_1fr] gap-6"
+      >
+        <h2 class="font-title font-extrabold text-5xl">
+          {PROJECTS_HEADING}
+        </h2>
+        <ProjectList client:load />
+      </article>
+    </section>
+
+    <footer
+      id="talk-to-me"
+      class="min-h-screen grid items-center bg-primary/90 text-white selection:!bg-white selection:!text-primary"
+    >
+      <Contacts />
+      <img
+        src="/footer.jpg"
+        alt={ALT_FOOTER_BG}
+        class="-z-10 fixed top-0 h-full w-full object-cover object-[25%]"
+      />
+    </footer>
+  </body>
+</html>

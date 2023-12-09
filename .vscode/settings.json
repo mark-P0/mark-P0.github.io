@@ -1,0 +1,29 @@
+{
+  "[json][jsonc][javascript][typescript][javascriptreact][typescriptreact][astro]": {
+    "editor.tabSize": 2
+  },
+  "[json][jsonc][markdown][css][javascript][typescript][javascriptreact][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript][typescript][javascriptreact][typescriptreact][astro]": {
+    "editor.codeActionsOnSave": {
+      "source.sortImports": true
+    }
+  },
+  "cSpell.words": [
+    "raspberrypi",
+    "svgrepo",
+    "kivy",
+    "rtdb",
+    "resumé",
+    "astrojs",
+    "tsconfigs",
+    "astro"
+  ],
+  "cSpell.allowCompoundWords": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js"
+}
