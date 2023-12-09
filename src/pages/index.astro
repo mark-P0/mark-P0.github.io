@@ -16,8 +16,8 @@ const scrollbars = [
   "scrollbar-thin",
   ...["scrollbar-thumb-primary", "scrollbar-track-white"],
   ...[
-    "data-[section=contacts]:scrollbar-thumb-white",
-    "data-[section=contacts]:scrollbar-track-primary",
+    "data-[section=talk-to-me]:scrollbar-thumb-white",
+    "data-[section=talk-to-me]:scrollbar-track-primary",
   ],
 ].join(" ");
 ---
@@ -37,20 +37,20 @@ const scrollbars = [
     class="font-text text-primary lowercase selection:bg-primary selection:text-white"
   >
     <nav class="fixed right-0 grid gap-4 p-4">
-      <a href="#profile" class="w-6 h-6 rounded-full bg-red-500"></a>
-      <a href="#projects" class="w-6 h-6 rounded-full bg-red-500"></a>
-      <a href="#contacts" class="w-6 h-6 rounded-full bg-red-500"></a>
+      <a href="#who-am-i" class="w-6 h-6 rounded-full bg-red-500"></a>
+      <a href="#what-i-do" class="w-6 h-6 rounded-full bg-red-500"></a>
+      <a href="#talk-to-me" class="w-6 h-6 rounded-full bg-red-500"></a>
     </nav>
 
     <header
-      id="profile"
+      id="who-am-i"
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
       <!-- <Profile /> -->
     </header>
 
     <section
-      id="projects"
+      id="what-i-do"
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
       <article
@@ -64,7 +64,7 @@ const scrollbars = [
     </section>
 
     <footer
-      id="contacts"
+      id="talk-to-me"
       class="min-h-screen grid items-center bg-primary/90 text-white selection:!bg-white selection:!text-primary"
     >
       <Contacts />

@@ -1,8 +1,8 @@
 const root = document.documentElement;
 
-const profile = document.getElementById("profile");
-const projects = document.getElementById("projects");
-const contacts = document.getElementById("contacts");
+const profile = document.getElementById("who-am-i");
+const projects = document.getElementById("what-i-do");
+const contacts = document.getElementById("talk-to-me");
 
 function callback(
   entries: IntersectionObserverEntry[]
@@ -18,9 +18,9 @@ function callback(
     else if (target === contacts && isIntersecting) isContactsVisible = true;
   }
 
-  if (isProfileVisible) root.setAttribute("data-section", "profile");
-  else if (isProjectsVisible) root.setAttribute("data-section", "projects");
-  else if (isContactsVisible) root.setAttribute("data-section", "contacts");
+  if (isProfileVisible) root.setAttribute("data-section", "who-am-i");
+  else if (isProjectsVisible) root.setAttribute("data-section", "what-i-do");
+  else if (isContactsVisible) root.setAttribute("data-section", "talk-to-me");
 }
 
 const options: IntersectionObserverInit = {
