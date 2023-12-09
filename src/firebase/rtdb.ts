@@ -9,6 +9,7 @@ export type Project = {
   name: string;
   screenshot: string;
   sourceCode: string;
+  tags?: string[];
 };
 
 export async function getProjects(): Promise<Project[]> {
