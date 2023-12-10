@@ -1,5 +1,5 @@
 import TailwindScrollbar from "tailwind-scrollbar";
-import { ProfileGridPlugin } from "./src/styles/tailwind/HeaderGridPlugin.js";
+import { ProfileGridPlugin } from "./src/styles/tailwind/ProfileGridPlugin.js";
 
 /** @type {import('tailwindcss').Config} */
 export default {
