@@ -2,38 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-.header-grid-template {
-  grid-template-areas:
-    "title      "
-    "portrait   "
-    "description";
-
-  @media screen(md) {
+@layer components {
+  .header-grid-template {
     grid-template-areas:
-      "title    .        .        .          "
-      "portrait portrait portrait description"
-      "portrait portrait portrait description"
-      "portrait portrait portrait description"
-      "portrait portrait portrait .          ";
+      "title      "
+      "portrait   "
+      "description";
+
+    @media screen(md) {
+      grid-template-areas:
+        "title    .        .        .          "
+        "portrait portrait portrait description"
+        "portrait portrait portrait description"
+        "portrait portrait portrait description"
+        "portrait portrait portrait .          ";
+    }
+
+    @media screen(lg) {
+      grid-template-areas:
+        "portrait portrait portrait .          "
+        "portrait portrait portrait .          "
+        "portrait portrait portrait description"
+        "portrait portrait portrait title      ";
+    }
   }
 
-  @media screen(lg) {
-    grid-template-areas:
-      "portrait portrait portrait .          "
-      "portrait portrait portrait .          "
-      "portrait portrait portrait description"
-      "portrait portrait portrait title      ";
+  .header-grid-title {
+    grid-area: title;
   }
-}
 
-.header-grid-title {
-  grid-area: title;
-}
+  .header-grid-description {
+    grid-area: description;
+  }
 
-.header-grid-description {
-  grid-area: description;
-}
-
-.header-grid-portrait {
-  grid-area: portrait;
+  .header-grid-portrait {
+    grid-area: portrait;
+  }
 }
