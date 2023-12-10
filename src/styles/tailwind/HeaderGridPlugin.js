@@ -1,8 +1,8 @@
 import plugin from "tailwindcss/plugin";
 
-export const HeaderGridPlugin = plugin(({ addComponents }) => {
+export const ProfileGridPlugin = plugin(({ addComponents }) => {
   addComponents({
-    ".header-grid-template": {
+    ".profile-grid-template": {
       "grid-template-areas": `
         "title      "
         "portrait   "
@@ -25,9 +25,10 @@ export const HeaderGridPlugin = plugin(({ addComponents }) => {
           "portrait portrait portrait title      "
         `.trimEnd(),
       },
-      ".header-grid-title": { "grid-area": "title" },
-      ".header-grid-description": { "grid-area": "description" },
-      ".header-grid-portrait": { "grid-area": "portrait" },
+
+      ".profile-grid-title": { "grid-area": "title" },
+      ".profile-grid-description": { "grid-area": "description" },
+      ".profile-grid-portrait": { "grid-area": "portrait" },
     },
   });
 });

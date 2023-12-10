@@ -13,16 +13,16 @@ import { Portrait } from "./Portrait.jsx";
 import { ResumeLinkButton } from "./ResumeLinkButton.jsx";
 ---
 
-<article class="container mx-auto py-12 px-8 grid header-grid-template">
+<article class="container mx-auto py-12 px-8 grid profile-grid-template">
   <h1
-    class="header-grid-title font-title font-thin text-5xl lg:text-8xl lg:pl-6 lg:pt-6"
+    class="profile-grid-title font-title font-thin text-5xl lg:text-8xl lg:pl-6 lg:pt-6"
   >
     {HEADER_MAIN[0]}
     <span class="font-extrabold">{HEADER_MAIN[1]}</span>
   </h1>
 
   <section
-    class="header-grid-description bg-white border-primary border-2 border-t-0 border-l-0 rounded-lg md:rounded-bl-none p-4 md:pl-6 mt-6 md:mt-0"
+    class="profile-grid-description bg-white border-primary border-2 border-t-0 border-l-0 rounded-lg md:rounded-bl-none p-4 md:pl-6 mt-6 md:mt-0"
   >
     <h2 class="mb-2 font-title font-extrabold text-3xl">
       <a href={HEADER_TEXT_HEADING_LINK} target="_blank">
@@ -89,7 +89,7 @@ import { ResumeLinkButton } from "./ResumeLinkButton.jsx";
   </section>
 
   <figure
-    class="header-grid-portrait relative w-full aspect-[3/4] bg-primary/50 rounded-lg overflow-hidden"
+    class="profile-grid-portrait relative w-full aspect-[3/4] bg-primary/50 rounded-lg overflow-hidden"
   >
     <div class="absolute w-full h-full grid place-items-center">
       <Portrait client:load />
