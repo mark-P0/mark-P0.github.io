@@ -13,87 +13,97 @@ import { Portrait } from "./Portrait.jsx";
 import { ResumeLinkButton } from "./ResumeLinkButton.jsx";
 ---
 
-<article class="container mx-auto py-12 px-8 grid profile-grid-template">
-  <h1
-    class="profile-grid-title font-title font-thin text-5xl lg:text-8xl lg:pl-6 lg:pt-6"
+<article
+  class="h-fit container mx-auto py-12 px-8 grid md:grid-cols-2 lg:grid-cols-8"
+>
+  <div class="lg:col-start-4 lg:col-span-5 lg:row-start-3">
+    <h1 class="font-title font-thin text-5xl lg:text-8xl lg:pl-6 lg:pt-6">
+      {HEADER_MAIN[0]}
+      <span class="font-extrabold">{HEADER_MAIN[1]}</span>
+    </h1>
+  </div>
+
+  <div
+    class="md:col-start-2 md:row-start-2 lg:col-start-4 lg:col-span-5 lg:row-start-2 lg:self-end"
   >
-    {HEADER_MAIN[0]}
-    <span class="font-extrabold">{HEADER_MAIN[1]}</span>
-  </h1>
+    <section
+      class="bg-white border-primary border-2 border-t-0 border-l-0 rounded-lg md:rounded-bl-none p-4 md:pl-6 mt-6 md:mt-0"
+    >
+      <h2 class="mb-2 font-title font-extrabold text-3xl">
+        <a href={HEADER_TEXT_HEADING_LINK} target="_blank">
+          {HEADER_TEXT_HEADING}
+        </a>
+      </h2>
 
-  <section
-    class="profile-grid-description bg-white border-primary border-2 border-t-0 border-l-0 rounded-lg md:rounded-bl-none p-4 md:pl-6 mt-6 md:mt-0"
-  >
-    <h2 class="mb-2 font-title font-extrabold text-3xl">
-      <a href={HEADER_TEXT_HEADING_LINK} target="_blank">
-        {HEADER_TEXT_HEADING}
-      </a>
-    </h2>
-
-    <p>
-      {HEADER_TEXT[0]}
-      <span class="font-bold">{HEADER_TEXT[1]}</span>
-      <span class="capitalize">
-        <a href="https://en.wikipedia.org/wiki/Impostor_syndrome"
-          >{HEADER_TEXT[2].slice(0, -2)}</a
-        ><a
-          href="https://www.urbandictionary.com/define.php?term=soon%20%28tm%29"
-          >{HEADER_TEXT[2].slice(-2)}</a
-        >
-      </span>
-      {HEADER_TEXT[3]}
-      <em>{HEADER_TEXT[4]}</em>
-
-      <br class="block content-[''] mb-1" />
-
-      {HEADER_TEXT[5]}
-      <span class="font-bold">{HEADER_TEXT[6]}</span>
-      {HEADER_TEXT[7]}
-      <span class="font-bold">{HEADER_TEXT[8]}</span>
-      {HEADER_TEXT[9]}
-      <span class="font-bold">{HEADER_TEXT[10]}</span>
-      {HEADER_TEXT[11]}
-
-      <br class="block content-[''] mb-1" />
-
-      <span class="text-primary/25">{HEADER_TEXT[12]}</span>
-    </p>
-
-    <address class="not-italic">
-      <ul class="mt-6 flex flex-row-reverse items-center">
-        <li class="flex">
-          <ResumeLinkButton client:load />
-        </li>
-        <li>
-          <a
-            href={LINK_SOCIAL}
-            target="_blank"
-            class="block p-2 rounded transition hover:bg-primary hover:text-white active:scale-90"
+      <p>
+        {HEADER_TEXT[0]}
+        <span class="font-bold">{HEADER_TEXT[1]}</span>
+        <span class="capitalize">
+          <a href="https://en.wikipedia.org/wiki/Impostor_syndrome"
+            >{HEADER_TEXT[2].slice(0, -2)}</a
+          ><a
+            href="https://www.urbandictionary.com/define.php?term=soon%20%28tm%29"
+            >{HEADER_TEXT[2].slice(-2)}</a
           >
-            <BsLinkedin class="h-8 w-8" />
-            <span class="sr-only">Go to {NAME}'s LinkedIn profile</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href={LINK_VCS}
-            target="_blank"
-            class="block p-2 rounded transition hover:bg-primary hover:text-white active:scale-90"
-          >
-            <BsGithub class="h-8 w-8" />
-            <span class="sr-only">Go to {NAME}'s GitHub profile</span>
-          </a>
-        </li>
-      </ul>
-    </address>
-  </section>
+        </span>
+        {HEADER_TEXT[3]}
+        <em>{HEADER_TEXT[4]}</em>
 
-  <figure
-    class="profile-grid-portrait relative w-full aspect-[3/4] bg-primary/50 rounded-lg overflow-hidden"
+        <br class="block content-[''] mb-1" />
+
+        {HEADER_TEXT[5]}
+        <span class="font-bold">{HEADER_TEXT[6]}</span>
+        {HEADER_TEXT[7]}
+        <span class="font-bold">{HEADER_TEXT[8]}</span>
+        {HEADER_TEXT[9]}
+        <span class="font-bold">{HEADER_TEXT[10]}</span>
+        {HEADER_TEXT[11]}
+
+        <br class="block content-[''] mb-1" />
+
+        <span class="text-primary/25">{HEADER_TEXT[12]}</span>
+      </p>
+
+      <address class="not-italic">
+        <ul class="mt-6 flex flex-row-reverse items-center">
+          <li class="flex">
+            <ResumeLinkButton client:load />
+          </li>
+          <li>
+            <a
+              href={LINK_SOCIAL}
+              target="_blank"
+              class="block p-2 rounded transition hover:bg-primary hover:text-white active:scale-90"
+            >
+              <BsLinkedin class="h-8 w-8" />
+              <span class="sr-only">Go to {NAME}'s LinkedIn profile</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href={LINK_VCS}
+              target="_blank"
+              class="block p-2 rounded transition hover:bg-primary hover:text-white active:scale-90"
+            >
+              <BsGithub class="h-8 w-8" />
+              <span class="sr-only">Go to {NAME}'s GitHub profile</span>
+            </a>
+          </li>
+        </ul>
+      </address>
+    </section>
+  </div>
+
+  <div
+    class="row-start-2 lg:col-start-1 lg:col-span-3 lg:row-start-1 lg:row-span-3 lg:self-end"
   >
-    <div class="absolute w-full h-full grid place-items-center">
-      <Portrait client:load />
-    </div>
-    <figcaption class="sr-only">{NAME}</figcaption>
-  </figure>
+    <figure
+      class="relative w-full aspect-[3/4] bg-primary/50 rounded-lg overflow-hidden"
+    >
+      <div class="absolute w-full h-full grid place-items-center">
+        <Portrait client:load />
+      </div>
+      <figcaption class="sr-only">{NAME}</figcaption>
+    </figure>
+  </div>
 </article>
