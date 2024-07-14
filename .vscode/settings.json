@@ -7,7 +7,7 @@
   },
   "[javascript][typescript][javascriptreact][typescriptreact][astro]": {
     "editor.codeActionsOnSave": {
-      "source.sortImports": true
+      "source.sortImports": "always"
     }
   },
   "cSpell.words": [
