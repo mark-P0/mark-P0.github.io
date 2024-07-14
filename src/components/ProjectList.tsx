@@ -105,7 +105,7 @@ export function ProjectList() {
   );
   return (
     <Show when={last6Projects() !== null} fallback={Fallback}>
-      <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <ul class="h-fit grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <For each={last6Projects()}>
           {(project) => (
             <li>
