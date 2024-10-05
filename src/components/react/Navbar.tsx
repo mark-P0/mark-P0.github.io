@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { SECTION_RECORDS, type SectionRecord } from "../../section-records.ts";
 import {
   Tooltip,
@@ -11,6 +11,10 @@ import {
 import { cn } from "./shadcn/utils.ts";
 
 function useSectionObserver() {
+  const [visibleSectionId, setVisibleSectionId] = useState<
+    SectionRecord["id"] | null
+  >(null);
+
   useEffect(() => {
     const root = document.documentElement;
     root.classList.add("group/scrollspy");
@@ -43,6 +47,7 @@ function useSectionObserver() {
         if (!section.isVisible) continue;
 
         root.setAttribute("data-section", section.id);
+        setVisibleSectionId(section.id);
         break;
       }
     };
@@ -71,53 +76,20 @@ function useSectionObserver() {
       observer.disconnect();
     };
   }, []);
+
+  return {
+    visibleSectionId,
+  };
 }
 
-function SectionLink(props: { section: SectionRecord }) {
-  const { section } = props;
+function SectionLink(props: {
+  section: SectionRecord;
+  visibleSectionId: SectionRecord["id"];
+}) {
+  const { section, visibleSectionId } = props;
 
-  const anchor = [
-    "w-6 h-6 rounded-full",
-    ...[
-      "shadow-md",
-      "shadow-white/50",
-      "group-data-[section=talk-to-me]/scrollspy:shadow-primary/50",
-    ],
-    "transition",
-  ].join(" ");
-
-  const sectionClassesRecord: Record<SectionRecord["id"], string> = {
-    "who-am-i": [
-      anchor,
-      ...[
-        "bg-primary/50",
-        "hover:bg-primary",
-        "group-data-[section=who-am-i]/scrollspy:bg-primary",
-        "group-data-[section=talk-to-me]/scrollspy:bg-white/50",
-        "group-data-[section=talk-to-me]/scrollspy:hover:bg-white",
-      ],
-    ].join(" "),
-    "what-i-do": [
-      anchor,
-      ...[
-        "bg-primary/50",
-        "hover:bg-primary",
-        "group-data-[section=what-i-do]/scrollspy:bg-primary",
-        "group-data-[section=talk-to-me]/scrollspy:bg-white/50",
-        "group-data-[section=talk-to-me]/scrollspy:hover:bg-white",
-      ],
-    ].join(" "),
-    "talk-to-me": [
-      anchor,
-      ...[
-        "bg-primary/50",
-        "hover:bg-primary",
-        // "group-data-[section=talk-to-me]/scrollspy:bg-primary", // Unnecessary as this condition has a definite color
-        "group-data-[section=talk-to-me]/scrollspy:bg-white",
-        "group-data-[section=talk-to-me]/scrollspy:hover:bg-white", // Should be redundant...
-      ],
-    ].join(" "),
-  };
+  const isThisSectionVisible = visibleSectionId === section.id;
+  const isLastSectionVisible = visibleSectionId === "talk-to-me";
 
   return (
     <TooltipProvider delayDuration={0}>
@@ -125,7 +97,20 @@ function SectionLink(props: { section: SectionRecord }) {
         <TooltipTrigger asChild>
           <a
             href={`#${section.id}`}
-            className={sectionClassesRecord[section.id]}
+            className={cn(
+              "w-6 h-6 rounded-full",
+              [
+                "shadow-md shadow-white/50",
+                isLastSectionVisible && "shadow-primary/50",
+              ],
+              [
+                "transition",
+                "bg-primary/50 hover:bg-primary",
+                isLastSectionVisible && "bg-white/50 hover:bg-white",
+                isThisSectionVisible && "bg-primary",
+                isThisSectionVisible && isLastSectionVisible && "bg-white",
+              ]
+            )}
           >
             <span className="sr-only">{section.hint}</span>
           </a>
@@ -137,7 +122,10 @@ function SectionLink(props: { section: SectionRecord }) {
           className={cn(
             "hidden md:block", // Tablets and larger
             "font-title font-bold text-sm",
-            "text-white bg-primary"
+            [
+              "text-white bg-primary",
+              isLastSectionVisible && "text-primary bg-white",
+            ]
           )}
         >
           {section.title}
@@ -147,8 +135,11 @@ function SectionLink(props: { section: SectionRecord }) {
           sideOffset={8}
           className={cn(
             "md:hidden", // Mobile
-            "font-title font-bold text-sm",
-            "text-white bg-primary"
+            "font-title font-bold",
+            [
+              "text-white bg-primary",
+              isLastSectionVisible && "text-primary bg-white",
+            ]
           )}
         >
           {section.title}
@@ -159,18 +150,29 @@ function SectionLink(props: { section: SectionRecord }) {
 }
 
 export function Navbar() {
-  useSectionObserver();
+  const { visibleSectionId } = useSectionObserver();
 
-  const navbarPos = [
-    "fixed",
-    ...["bottom-0", "right-1/2", "translate-x-1/2"], // Small (default): Bottom Center
-    ...["md:bottom-auto", "md:right-0", "md:translate-x-0"], // Medium above: Top Right
-  ].join(" ");
+  if (visibleSectionId === null) {
+    return null;
+  }
 
   return (
-    <nav className={`z-10 ${navbarPos} flex md:grid gap-4 p-4`}>
+    <nav
+      className={cn(
+        [
+          "fixed z-10",
+          "bottom-0 right-1/2 translate-x-1/2", // Mobile (Bottom-center)
+          "md:bottom-auto md:right-0 md:translate-x-0", // Tablets and larger (Top-right)
+        ],
+        "flex md:grid gap-4 p-4"
+      )}
+    >
       {SECTION_RECORDS.map((section) => (
-        <SectionLink key={section.id} section={section} />
+        <SectionLink
+          key={section.id}
+          section={section}
+          visibleSectionId={visibleSectionId}
+        />
       ))}
     </nav>
   );
