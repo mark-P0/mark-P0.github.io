@@ -4,6 +4,7 @@ import Navbar from "../components/astro/Navbar.astro";
 import OGPMetaTags from "../components/astro/OGPMetaTags.astro";
 import Profile from "../components/astro/Profile.astro";
 import { ProjectList } from "../components/solid/ProjectList.tsx";
+import { SECTION_RECORDS } from "../section-records.ts";
 import {
   ALT_FOOTER_BG,
   HEADER_TEXT,
@@ -52,14 +53,14 @@ const scrollbars = [
   >
     <Navbar />
     <header
-      id="who-am-i"
+      id={SECTION_RECORDS[0].id}
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
       <Profile />
     </header>
 
     <section
-      id="what-i-do"
+      id={SECTION_RECORDS[1].id}
       class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
     >
       <article
@@ -73,7 +74,7 @@ const scrollbars = [
     </section>
 
     <footer
-      id="talk-to-me"
+      id={SECTION_RECORDS[2].id}
       class="min-h-screen grid items-center bg-primary/90 text-white selection:!bg-white selection:!text-primary"
     >
       <Contacts />
