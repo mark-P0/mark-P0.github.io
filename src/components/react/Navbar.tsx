@@ -66,14 +66,8 @@ function useSectionObserver() {
   }, []);
 }
 
-export function Navbar() {
-  useSectionObserver();
-
-  const navbarPos = [
-    "fixed",
-    ...["bottom-0", "right-1/2", "translate-x-1/2"], // Small (default): Bottom Center
-    ...["md:bottom-auto", "md:right-0", "md:translate-x-0"], // Medium above: Top Right
-  ].join(" ");
+function SectionLink(props: { section: SectionRecord }) {
+  const { section } = props;
 
   const anchor = [
     "w-6 h-6 rounded-full",
@@ -119,11 +113,25 @@ export function Navbar() {
   };
 
   return (
+    <a href={`#${section.id}`} className={sectionClassesRecord[section.id]}>
+      <span className="sr-only">{section.hint}</span>
+    </a>
+  );
+}
+
+export function Navbar() {
+  useSectionObserver();
+
+  const navbarPos = [
+    "fixed",
+    ...["bottom-0", "right-1/2", "translate-x-1/2"], // Small (default): Bottom Center
+    ...["md:bottom-auto", "md:right-0", "md:translate-x-0"], // Medium above: Top Right
+  ].join(" ");
+
+  return (
     <nav className={`z-10 ${navbarPos} flex md:grid gap-4 p-4`}>
       {SECTION_RECORDS.map((section) => (
-        <a href={`#${section.id}`} className={sectionClassesRecord[section.id]}>
-          <span className="sr-only">{section.hint}</span>
-        </a>
+        <SectionLink key={section.id} section={section} />
       ))}
     </nav>
   );
