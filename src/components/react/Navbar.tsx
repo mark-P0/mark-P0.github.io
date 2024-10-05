@@ -16,9 +16,6 @@ function useSectionObserver() {
   >(null);
 
   useEffect(() => {
-    const root = document.documentElement;
-    root.classList.add("group/scrollspy");
-
     const sectionElementRecords = SECTION_RECORDS.map(({ id }) => ({
       id,
       element: document.getElementById(id),
@@ -46,7 +43,6 @@ function useSectionObserver() {
       for (const section of sectionElementRecords) {
         if (!section.isVisible) continue;
 
-        root.setAttribute("data-section", section.id);
         setVisibleSectionId(section.id);
         break;
       }
