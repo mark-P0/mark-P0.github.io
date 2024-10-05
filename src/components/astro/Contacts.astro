@@ -1,6 +1,11 @@
 ---
-import { BsEnvelopeFill, BsGeoAltFill, BsTelephoneFill } from "solid-icons/bs";
-import { BsGithub, BsLinkedin } from "solid-icons/bs";
+import {
+  BsEnvelopeFill,
+  BsGeoAltFill,
+  BsGithub,
+  BsLinkedin,
+  BsTelephoneFill,
+} from "../solid/Icons.tsx";
 import {
   FOOTER_CONTACT,
   FOOTER_HEADING,
@@ -26,7 +31,7 @@ import {
   <address class="not-italic">
     <ul class="font-title font-thin text-2xl">
       <li class="flex flex-row-reverse items-center gap-4">
-        <BsGeoAltFill />
+        <BsGeoAltFill client:only="solid-js" />
         <span>
           {FOOTER_LOCATION[0]}<span class="hidden md:inline"
             >{FOOTER_LOCATION[1]}</span
@@ -34,7 +39,7 @@ import {
         </span>
       </li>
       <li class="flex flex-row-reverse items-center gap-4">
-        <BsTelephoneFill />
+        <BsTelephoneFill client:only="solid-js" />
         <span class="text-xl">{FOOTER_CONTACT}</span>
       </li>
     </ul>
@@ -47,7 +52,7 @@ import {
         target="_blank"
         class="block p-2 rounded transition hover:bg-white hover:text-primary active:scale-90"
       >
-        <BsEnvelopeFill class="h-8 w-8" />
+        <BsEnvelopeFill client:only="solid-js" class="h-8 w-8" />
         <span class="sr-only">Send email to {LINK_ADDRESS}</span>
       </a>
       <a
@@ -55,7 +60,7 @@ import {
         target="_blank"
         class="block p-2 rounded transition hover:bg-white hover:text-primary active:scale-90"
       >
-        <BsLinkedin class="h-8 w-8" />
+        <BsLinkedin client:only="solid-js" class="h-8 w-8" />
         <span class="sr-only">Go to {NAME}'s LinkedIn profile</span>
       </a>
       <a
@@ -63,7 +68,7 @@ import {
         target="_blank"
         class="block p-2 rounded transition hover:bg-white hover:text-primary active:scale-90"
       >
-        <BsGithub class="h-8 w-8" />
+        <BsGithub client:only="solid-js" class="h-8 w-8" />
         <span class="sr-only">Go to {NAME}'s GitHub profile</span>
       </a>
     </ul>

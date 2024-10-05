@@ -1,3 +1,4 @@
+import ReactJS from "@astrojs/react";
 import SolidJS from "@astrojs/solid-js";
 import Tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
@@ -9,6 +10,11 @@ export default defineConfig({
     Tailwind({
       applyBaseStyles: false,
     }),
-    SolidJS(),
+    SolidJS({
+      include: ["**/solid/*"],
+    }),
+    ReactJS({
+      include: ["**/react/*"],
+    }),
   ],
 });

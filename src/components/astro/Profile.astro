@@ -1,5 +1,5 @@
 ---
-import { BsGithub, BsLinkedin } from "solid-icons/bs";
+import { BsGithub, BsLinkedin } from "../solid/Icons.jsx";
 import {
   HEADER_MAIN,
   HEADER_TEXT,
@@ -75,7 +75,7 @@ import { ResumeLinkButton } from "../solid/ResumeLinkButton.jsx";
               target="_blank"
               class="block p-2 rounded transition hover:bg-primary hover:text-white active:scale-90"
             >
-              <BsLinkedin class="h-8 w-8" />
+              <BsLinkedin client:only="solid-js" class="h-8 w-8" />
               <span class="sr-only">Go to {NAME}'s LinkedIn profile</span>
             </a>
           </li>
@@ -85,7 +85,7 @@ import { ResumeLinkButton } from "../solid/ResumeLinkButton.jsx";
               target="_blank"
               class="block p-2 rounded transition hover:bg-primary hover:text-white active:scale-90"
             >
-              <BsGithub class="h-8 w-8" />
+              <BsGithub client:only="solid-js" class="h-8 w-8" />
               <span class="sr-only">Go to {NAME}'s GitHub profile</span>
             </a>
           </li>
