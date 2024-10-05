@@ -2,6 +2,13 @@
 
 import { useEffect } from "react";
 import { SECTION_RECORDS, type SectionRecord } from "../../section-records.ts";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./shadcn/tooltip.tsx";
+import { cn } from "./shadcn/utils.ts";
 
 function useSectionObserver() {
   useEffect(() => {
@@ -113,9 +120,41 @@ function SectionLink(props: { section: SectionRecord }) {
   };
 
   return (
-    <a href={`#${section.id}`} className={sectionClassesRecord[section.id]}>
-      <span className="sr-only">{section.hint}</span>
-    </a>
+    <TooltipProvider delayDuration={0}>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <a
+            href={`#${section.id}`}
+            className={sectionClassesRecord[section.id]}
+          >
+            <span className="sr-only">{section.hint}</span>
+          </a>
+        </TooltipTrigger>
+
+        <TooltipContent
+          side="left"
+          sideOffset={8}
+          className={cn(
+            "hidden md:block", // Tablets and larger
+            "font-title font-bold text-sm",
+            "text-white bg-primary"
+          )}
+        >
+          {section.title}
+        </TooltipContent>
+
+        <TooltipContent
+          sideOffset={8}
+          className={cn(
+            "md:hidden", // Mobile
+            "font-title font-bold text-sm",
+            "text-white bg-primary"
+          )}
+        >
+          {section.title}
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 }
 
