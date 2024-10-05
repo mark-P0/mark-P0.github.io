@@ -1,5 +1,21 @@
 # [mark-p0.github.io](https://mark-p0.github.io/)
 
+> #### Using multiple JSX frameworks
+>
+> [Set the appropriate `jsxImportSource` compiler option for a framework component via a comment pragma.](https://docs.astro.build/en/guides/typescript/#errors-typing-multiple-jsx-frameworks-at-the-same-time)
+>
+> ```tsx
+> // For Solid
+> /** @jsxImportSource solid-js */
+>
+> // For React
+> /** @jsxImportSource solid-js */
+> ```
+>
+> The `jsx` compiler option also seems to differ between frameworks, but changing it does not seem to be required.
+>
+> [Astro's endorsed example](https://github.com/withastro/astro/tree/latest/examples/framework-multiple) sets `jsx` to `preserve`, and sets `jsxImportSource` explicitly per framework component.
+
 ## Dependencies
 
 - [Astro](https://astro.build/), for static site generation with option for interactive components
