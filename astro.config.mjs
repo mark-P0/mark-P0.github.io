@@ -2,15 +2,14 @@ import SolidJS from "@astrojs/solid-js";
 import Tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://mark-p0.github.io/",
-  integrations: [
-    Tailwind({
-      applyBaseStyles: false,
-    }),
-    SolidJS({
-      include: ["**/solid/*", "**/node_modules/solid-icons/**"],
-    }),
-  ],
+  integrations: [Tailwind({
+    applyBaseStyles: false
+  }), SolidJS({
+    include: ["**/solid/*", "**/node_modules/solid-icons/**"]
+  }), react()]
 });
