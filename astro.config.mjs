@@ -9,6 +9,8 @@ export default defineConfig({
     Tailwind({
       applyBaseStyles: false,
     }),
-    SolidJS(),
+    SolidJS({
+      include: ["**/solid/*", "**/node_modules/solid-icons/**"],
+    }),
   ],
 });
