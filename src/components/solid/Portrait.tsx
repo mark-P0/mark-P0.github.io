@@ -1,6 +1,6 @@
 import { Show, createEffect, createSignal } from "solid-js";
-import { getPortrait } from "../firebase/storage.ts";
-import { NAME } from "../strings.ts";
+import { getPortrait } from "../../firebase/storage.ts";
+import { NAME } from "../../strings.ts";
 import { LoadingIndicator } from "./LoadingIndicator.tsx";
 
 export function Portrait() {

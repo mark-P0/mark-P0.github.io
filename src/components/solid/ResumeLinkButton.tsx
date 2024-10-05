@@ -1,5 +1,5 @@
 import { createEffect, createSignal } from "solid-js";
-import { getResume } from "../firebase/storage.ts";
+import { getResume } from "../../firebase/storage.ts";
 
 export function ResumeLinkButton() {
   const [href, setHref] = createSignal("/");

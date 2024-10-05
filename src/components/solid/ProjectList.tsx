@@ -1,6 +1,6 @@
 import { FiCode, FiExternalLink } from "solid-icons/fi";
 import { For, Show, createEffect, createSignal } from "solid-js";
-import { getProjects, type Project } from "../firebase/rtdb.ts";
+import { getProjects, type Project } from "../../firebase/rtdb.ts";
 import { LoadingIndicator } from "./LoadingIndicator.tsx";
 import { TagIconMap } from "./TagIcons.tsx";
 
