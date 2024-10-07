@@ -56,9 +56,6 @@ importers:
       tailwind-merge:
         specifier: ^2.5.3
         version: 2.5.3
-      tailwind-scrollbar:
-        specifier: ^3.0.5
-        version: 3.0.5(tailwindcss@3.3.6)
       tailwindcss:
         specifier: ^3.0.24
         version: 3.3.6
@@ -2580,12 +2577,6 @@ packages:
 
   tailwind-merge@2.5.3:
     resolution: {integrity: sha512-d9ZolCAIzom1nf/5p4LdD5zvjmgSxY0BGgdSvmXIoMYAiPdAW/dSpP7joCDYFY7r/HkEa2qmPtkgsu0xjQeQtw==}
-
-  tailwind-scrollbar@3.0.5:
-    resolution: {integrity: sha512-0ZwxTivevqq9BY9fRP9zDjHl7Tu+J5giBGbln+0O1R/7nHtBUKnjQcA1aTIhK7Oyjp6Uc/Dj6/dn8Dq58k5Uww==}
-    engines: {node: '>=12.13.0'}
-    peerDependencies:
-      tailwindcss: 3.x
 
   tailwindcss-animate@1.0.7:
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
@@ -5981,10 +5972,6 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0: {}
 
   tailwind-merge@2.5.3: {}
-
-  tailwind-scrollbar@3.0.5(tailwindcss@3.3.6):
-    dependencies:
-      tailwindcss: 3.3.6
 
   tailwindcss-animate@1.0.7(tailwindcss@3.3.6):
     dependencies:

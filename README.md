@@ -27,7 +27,6 @@
 - [IconKitchen](https://icon.kitchen), for generating favicon variants
 - _Google Fonts_, for [Nunito](https://fonts.google.com/specimen/Nunito) and [PT Sans](https://fonts.google.com/specimen/PT+Sans) ([pair source](https://heyreliable.com/ultimate-google-font-pairings/))
 - [Tailwind](https://tailwindcss.com/), for convenient utility styling
-  - [`tailwind-scrollbar`](https://github.com/adoxography/tailwind-scrollbar), for convenient scrollbar styling
 - [Firebase](https://firebase.google.com/), for dynamic content storage
 
 ## Credits
