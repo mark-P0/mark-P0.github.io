@@ -22,6 +22,8 @@
 - [SolidJS](https://www.solidjs.com/), for dynamic content loading
   - [Solid Icons](https://solid-icons.vercel.app/), for a close counterpart to the [React Icons](https://react-icons.github.io/react-icons/) collection
   - [SVG Repo](https://www.svgrepo.com/), for icons not available in the above collection
+- [ReactJS](https://react.dev/), for customizable interactive elements
+  - [Radix](https://www.radix-ui.com/primitives/docs) / [`shadcn`](https://ui.shadcn.com/), for a conventional headless library
 - [IconKitchen](https://icon.kitchen), for generating favicon variants
 - _Google Fonts_, for [Nunito](https://fonts.google.com/specimen/Nunito) and [PT Sans](https://fonts.google.com/specimen/PT+Sans) ([pair source](https://heyreliable.com/ultimate-google-font-pairings/))
 - [Tailwind](https://tailwindcss.com/), for convenient utility styling
