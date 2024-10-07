@@ -92,7 +92,7 @@ export function Navbar() {
           "bottom-0 right-1/2 translate-x-1/2", // Mobile (Bottom-center)
           "md:bottom-auto md:right-0 md:translate-x-0", // Tablets and larger (Top-right)
         ],
-        "flex md:grid gap-4 p-4"
+        "flex md:grid gap-4 py-4 px-6"
       )}
     >
       {SECTION_RECORDS.map((section) => (
