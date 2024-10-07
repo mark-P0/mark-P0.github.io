@@ -5,6 +5,7 @@ import {
   forwardRef,
   type ComponentPropsWithoutRef,
   type ElementRef,
+  type ReactNode,
 } from "react";
 import { cn } from "./utils.ts";
 
@@ -28,8 +29,10 @@ ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName;
 
 export const ScrollBar = forwardRef<
   ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
-  ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
->(({ className, orientation = "vertical", ...props }, ref) => (
+  ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar> & {
+    thumb?: ReactNode;
+  }
+>(({ thumb, className, orientation = "vertical", ...props }, ref) => (
   <ScrollAreaPrimitive.ScrollAreaScrollbar
     ref={ref}
     orientation={orientation}
@@ -43,7 +46,7 @@ export const ScrollBar = forwardRef<
     )}
     {...props}
   >
-    <ScrollThumb />
+    {thumb ?? <ScrollThumb />}
   </ScrollAreaPrimitive.ScrollAreaScrollbar>
 ));
 ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName;
