@@ -9,7 +9,7 @@
 > /** @jsxImportSource solid-js */
 >
 > // For React
-> /** @jsxImportSource solid-js */
+> /** @jsxImportSource react */
 > ```
 >
 > The `jsx` compiler option also seems to differ between frameworks, but changing it does not seem to be required.
