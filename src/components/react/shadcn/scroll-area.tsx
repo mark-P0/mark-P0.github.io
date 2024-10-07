@@ -43,7 +43,19 @@ export const ScrollBar = forwardRef<
     )}
     {...props}
   >
-    <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-border" />
+    <ScrollThumb />
   </ScrollAreaPrimitive.ScrollAreaScrollbar>
 ));
 ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName;
+
+export const ScrollThumb = forwardRef<
+  ElementRef<typeof ScrollAreaPrimitive.ScrollAreaThumb>,
+  ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaThumb>
+>(({ className, ...props }, ref) => (
+  <ScrollAreaPrimitive.ScrollAreaThumb
+    ref={ref}
+    className={cn("relative flex-1 rounded-full bg-border", className)}
+    {...props}
+  />
+));
+ScrollThumb.displayName = ScrollAreaPrimitive.ScrollAreaThumb.displayName;
