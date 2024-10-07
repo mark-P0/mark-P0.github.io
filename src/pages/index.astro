@@ -3,6 +3,7 @@ import Contacts from "../components/astro/Contacts.astro";
 import OGPMetaTags from "../components/astro/OGPMetaTags.astro";
 import Profile from "../components/astro/Profile.astro";
 import { Navbar } from "../components/react/Navbar.tsx";
+import { Scrollable } from "../components/react/Scrollable.tsx";
 import { ProjectList } from "../components/solid/ProjectList.tsx";
 import { SECTION_RECORDS } from "../section-records.ts";
 import {
@@ -16,24 +17,9 @@ import "../styles/tailwind.css";
 
 const title = NAME;
 const description = HEADER_TEXT.join(" ");
-
-/**
- * Changing scrollbar colors are kind of... jank on Chrome.
- * They do not update until "interacted" with, e.g. hovered
- *
- * On Firefox it works well enough.
- */
-const scrollbars = [
-  "scrollbar-thin",
-  ...["scrollbar-thumb-primary", "scrollbar-track-white"],
-  ...[
-    "data-[section=talk-to-me]:scrollbar-thumb-white", // Invert on `talk-to-me` section
-    "data-[section=talk-to-me]:scrollbar-track-primary",
-  ],
-].join(" ");
 ---
 
-<html lang="en" class={`scroll-smooth ${scrollbars}`}>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,38 +36,40 @@ const scrollbars = [
   <body
     class="font-text text-primary lowercase selection:bg-primary selection:text-white"
   >
-    <Navbar client:only="react" />
-    <header
-      id={SECTION_RECORDS[0].id}
-      class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
-    >
-      <Profile />
-    </header>
-
-    <section
-      id={SECTION_RECORDS[1].id}
-      class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
-    >
-      <article
-        class="container mx-auto py-12 px-8 min-h-full grid grid-rows-[auto_1fr] gap-6"
+    <Scrollable client:only="react">
+      <Navbar client:only="react" />
+      <header
+        id={SECTION_RECORDS[0].id}
+        class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
       >
-        <h2 class="font-title font-extrabold text-5xl">
-          {PROJECTS_HEADING}
-        </h2>
-        <ProjectList client:load />
-      </article>
-    </section>
+        <Profile />
+      </header>
 
-    <footer
-      id={SECTION_RECORDS[2].id}
-      class="min-h-screen grid items-center bg-primary/90 text-white selection:!bg-white selection:!text-primary"
-    >
-      <Contacts />
-      <img
-        src="/footer.jpg"
-        alt={ALT_FOOTER_BG}
-        class="-z-10 fixed top-0 h-full w-full object-cover object-[25%]"
-      />
-    </footer>
+      <section
+        id={SECTION_RECORDS[1].id}
+        class="min-h-screen grid items-center bg-[url('/texture.png')] bg-white"
+      >
+        <article
+          class="container mx-auto py-12 px-8 min-h-full grid grid-rows-[auto_1fr] gap-6"
+        >
+          <h2 class="font-title font-extrabold text-5xl">
+            {PROJECTS_HEADING}
+          </h2>
+          <ProjectList client:load />
+        </article>
+      </section>
+
+      <footer
+        id={SECTION_RECORDS[2].id}
+        class="min-h-screen grid items-center bg-primary/90 text-white selection:!bg-white selection:!text-primary"
+      >
+        <Contacts />
+        <img
+          src="/footer.jpg"
+          alt={ALT_FOOTER_BG}
+          class="-z-10 fixed top-0 h-full w-full object-cover object-[25%]"
+        />
+      </footer>
+    </Scrollable>
   </body>
 </html>
