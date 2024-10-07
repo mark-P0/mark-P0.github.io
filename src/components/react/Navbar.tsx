@@ -101,9 +101,9 @@ function SectionLink(props: {
               ],
               [
                 "transition",
-                "bg-primary/50 hover:bg-primary",
-                isLastSectionVisible && "bg-white/50 hover:bg-white",
+                "bg-primary/50",
                 isThisSectionVisible && "bg-primary",
+                isLastSectionVisible && "bg-white/50",
                 isThisSectionVisible && isLastSectionVisible && "bg-white",
               ]
             )}
